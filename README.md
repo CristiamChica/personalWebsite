@@ -4,27 +4,8 @@ A simple, modern personal website built with React and Vite. This is the first i
 
 ## 🚀 Project Overview
 
-This personal website is designed to be deployed through a modern pipeline: **GitHub → Free Hosting Service → Custom Domain**. The current version includes basic functionality with plans for future iterations to add security protocols and tracking tools.
+This personal website is designed to be deployed through a modern pipeline: **GitHub → Vercel → Custom Domain**. The current version includes basic functionality with plans for future iterations to add security protocols and tracking tools.
 
-## 📁 Project Structure
-
-```
-personal-website/
-├── public/                 # Static assets
-├── src/                   # Source code
-│   ├── components/        # React components
-│   │   ├── Header.jsx     # Navigation header component
-│   │   ├── Header.css     # Header styles
-│   │   ├── Home.jsx       # Home page component
-│   │   └── Home.css       # Home page styles
-│   ├── App.jsx           # Main application component
-│   ├── App.css           # Global app styles
-│   ├── main.jsx          # React application entry point
-│   └── index.css         # Global CSS reset and base styles
-├── index.html            # HTML template
-├── package.json          # Project dependencies and scripts
-├── vite.config.js        # Vite configuration
-└── README.md            # This file
 ```
 
 ## 📄 File Documentation
@@ -51,69 +32,12 @@ personal-website/
   - Content: Greeting, title, description, and action buttons
   - Future: Will connect buttons to actual functionality
 
-### Styling
-
-- **`src/index.css`**: 
-  - Global CSS reset and base styles
-  - Root variables for consistent theming
-  - Dark/light mode support using CSS media queries
-  - Typography and layout foundations
-
-- **`src/App.css`**: 
-  - Application-level layout styles
-  - Main container and responsive grid setup
-  - Flexbox utilities for page structure
-
-- **`src/components/Header.css`**: 
-  - Header-specific styles with glassmorphism effect
-  - Responsive navigation layout
-  - Hover states and transitions
-  - Mobile-first responsive design
-
-- **`src/components/Home.css`**: 
-  - Hero section styling with gradient backgrounds
-  - CSS animations (floating avatar)
-  - Grid layout for content sections
-  - Comprehensive responsive design
-  - Button styles and hover effects
-
-### Configuration
-
-- **`package.json`**: 
-  - Project metadata and dependencies
-  - Scripts for development, building, and deployment
-  - React 18 and Vite toolchain configuration
-
-- **`vite.config.js`**: 
-  - Vite bundler configuration
-  - React plugin setup
-  - Development and build optimizations
-
 ## 🛠️ Technologies Used
 
 - **React 18**: Modern React with hooks and concurrent features
 - **Vite**: Fast build tool and development server
 - **CSS3**: Modern CSS with Grid, Flexbox, and custom properties
 - **ES6+**: Modern JavaScript features
-
-## 📱 Features
-
-### Current Features (v1.0)
-- ✅ Responsive design (mobile-first approach)
-- ✅ Dark/light mode support (automatic based on system preference)
-- ✅ Modern glassmorphism UI design
-- ✅ Smooth animations and transitions
-- ✅ Semantic HTML structure
-- ✅ Clean, minimal component architecture
-
-### Planned Features (Future Iterations)
-- 🔄 Security protocols implementation
-- 🔄 Analytics and tracking tools
-- 🔄 Contact form functionality
-- 🔄 Portfolio/projects section
-- 🔄 Blog integration
-- 🔄 SEO optimizations
-- 🔄 Performance monitoring
 
 ## 🚀 Getting Started
 
@@ -146,50 +70,8 @@ personal-website/
 ## 🌐 Deployment Pipeline (Planned)
 
 1. **GitHub Repository**: Code versioning and collaboration
-2. **Free Hosting Service**: Options include:
-   - Vercel (recommended for React)
-   - Netlify
-   - GitHub Pages
-   - Firebase Hosting
+2. **Free Hosting Service**: Vercel (recommended for React)
 3. **Custom Domain**: Connect your owned domain to the hosting service
-
-## 📝 Customization Guide
-
-### Updating Personal Information
-
-1. **Edit `src/components/Header.jsx`**: 
-   - Change "Your Name" in the logo section
-   - Update navigation links as needed
-
-2. **Edit `src/components/Home.jsx`**: 
-   - Replace "[Your Name]" with your actual name
-   - Update the title and description text
-   - Customize the emoji avatar or replace with an actual image
-
-### Styling Modifications
-
-- **Colors**: Update the gradient colors in CSS files (search for `#667eea` and `#764ba2`)
-- **Typography**: Modify font families in `src/index.css`
-- **Layout**: Adjust spacing and sizing in component CSS files
-
-## 🔧 Development Notes
-
-- **Component Structure**: Each component follows the pattern of a `.jsx` file with its corresponding `.css` file
-- **Responsive Design**: Mobile-first approach with desktop enhancements
-- **CSS Organization**: Component-scoped styles with global base styles
-- **Performance**: Vite provides fast HMR (Hot Module Replacement) during development
-
-## 🎯 Next Steps
-
-1. **Content**: Replace placeholder content with your actual information
-2. **Images**: Add a professional profile photo
-3. **Domain Setup**: Prepare your domain for connection
-4. **GitHub Repository**: Initialize git and push to GitHub
-5. **Hosting**: Choose and configure a free hosting service
-
-## 🤝 Contributing
-
-This is a personal project, but feel free to fork it and use it as a template for your own website!
 
 ## 📄 License
 
