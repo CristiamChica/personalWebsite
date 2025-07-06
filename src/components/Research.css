@@ -529,6 +529,11 @@
     color: rgba(0, 0, 0, 0.6);
   }
   
+  /* Fix for paper description list items - THIS WAS MISSING! */
+  .paper-description li {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
   .paper-card .paper-year {
     color: rgba(0, 0, 0, 0.5);
   }

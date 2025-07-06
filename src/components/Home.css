@@ -555,6 +555,19 @@
   .carousel-counter {
     color: rgba(0, 0, 0, 0.5);
   }
+  
+  /* Fix carousel slide content that gets overridden later */
+  .carousel-slide .paper-title {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  .carousel-slide .paper-authors {
+    color: rgba(0, 0, 0, 0.6) !important;
+  }
+  
+  .carousel-slide .paper-status {
+    color: rgba(0, 0, 0, 0.5) !important;
+  }
 }
 
 /* Contact Section */
@@ -672,6 +685,28 @@
 
 /* Light mode styles for contact buttons */
 @media (prefers-color-scheme: light) {
+  /* Fix main description text */
+  .description {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Fix secondary button */
+  .btn-secondary {
+    color: rgba(0, 0, 0, 0.8);
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Fix title text */
+  .title {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Contact buttons */
   .contact-btn {
     background: rgba(255, 255, 255, 0.8);
     border-color: rgba(0, 0, 0, 0.1);
