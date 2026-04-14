@@ -47,15 +47,20 @@ function Home() {
         <div className="intro">
           <h1 className="greeting">Cristian Camilo Chica Castaño</h1>
           <p className="description">
-            Quantitative Strategist at Morgan Stanley with a Ph.D. in Mathematics from the University of Minnesota. 
-            My research is on multi-agent reinforcement learning, algorithmic pricing, and game theory.
+            PhD in Mathematics with experience spanning quantitative finance, academic research, and applied data science.
+            My research focuses on how multi-agent systems (e.g., Q-learning algorithms) can lead to tacit collusion in platform markets.
+            <br /><br />
+            Currently at Dapper, building data infrastructure to support expansion across Latin America and the Middle East.
+            Previously a Quantitative Strategist at Morgan Stanley, working on entity resolution, LLM-driven automation, and firm strategy.
+            <br /><br />
+            Research interests: reinforcement learning, algorithmic collusion, AI system design, legislative data analysis.
           </p>
         </div>
         <div className="hero-image">
           <div className="profile-photo">
             <img 
               src={profilePhoto} 
-              alt="Cristian Chica - Quantitative Strategist at Morgan Stanley" 
+              alt="Cristian Chica - PhD in Mathematics, Senior Data Scientist at Dapper"
               className="profile-img"
               loading="lazy"
             />

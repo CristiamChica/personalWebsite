@@ -18,7 +18,7 @@
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.9);
+  background: #1e293b;
   color: white;
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
@@ -30,7 +30,7 @@
   pointer-events: none;
   z-index: 1000;
   margin-bottom: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .tooltip-container[data-tooltip]::after {
@@ -43,7 +43,7 @@
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 6px solid rgba(0, 0, 0, 0.9);
+  border-top: 6px solid #1e293b;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -77,29 +77,29 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #2563eb;
   color: white;
 }
 
 .btn-primary:hover {
+  background: #1d4ed8;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
 }
 
 /* Card base styles */
 .card-base {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 1rem;
   padding: 2rem;
   transition: all 0.3s ease;
 }
 
 .card-base:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: #cbd5e1;
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* Section divider */
@@ -111,7 +111,7 @@
 .section-title {
   font-size: 2rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -123,11 +123,11 @@
   .container {
     padding: 0 1rem;
   }
-  
+
   .section-title {
     font-size: 1.5rem;
   }
-  
+
   /* Responsive tooltips */
   .tooltip-container[data-tooltip]::before {
     font-size: 0.75rem;
