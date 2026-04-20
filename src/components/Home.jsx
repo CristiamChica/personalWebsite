@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Home.css'
-import profilePhoto from '../assets/images/personalphoto.JPEG'
+import profilePhoto from '../assets/images/personalphotonew.jpg'
 import { papers } from '../data/papers.js'
 import { trackButtonClick, trackSocialClick } from '../utils/analytics'
 
