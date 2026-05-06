@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { initGA } from '../utils/analytics'
+import { initGA, trackCurrentPage } from '../utils/analytics'
 import './CookieConsent.css'
 
 function CookieConsent() {
@@ -33,8 +33,8 @@ function CookieConsent() {
           // Slight delay for smooth animation
           requestAnimationFrame(() => setIsVisible(true));
         } else if (consent === 'accepted') {
-          // Initialize analytics if previously accepted
-          initGA();
+          // Initialize analytics if previously accepted, then track the landing page view
+          initGA().then(trackCurrentPage);
         }
       } catch (error) {
         console.error('Error checking cookie consent status:', error);
@@ -52,7 +52,7 @@ function CookieConsent() {
       // Wait for animation before hiding
       setTimeout(() => {
         setShowBanner(false);
-        initGA();
+        initGA().then(trackCurrentPage);
       }, 300);
     } catch (error) {
       console.error('Error accepting cookies:', error);

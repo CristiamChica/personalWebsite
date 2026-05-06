@@ -10,11 +10,20 @@ import CookieConsent from './components/CookieConsent'
 import { trackPageView } from './utils/analytics'
 import './App.css'
 
+const PAGE_TITLES = {
+  '/': 'Home',
+  '/research': 'Research',
+  '/cv': 'CV',
+  '/privacy': 'Privacy Policy',
+};
+
 // Component to track page views
 function AnalyticsTracker() {
   const location = useLocation();
 
   useEffect(() => {
+    const label = PAGE_TITLES[location.pathname] ?? 'Page';
+    document.title = `${label} | Cristian Chica`;
     trackPageView(document.title, window.location.href);
   }, [location]);
 
