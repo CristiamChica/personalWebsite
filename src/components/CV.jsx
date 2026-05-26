@@ -4,9 +4,9 @@ import { trackDownload, trackButtonClick } from '../utils/analytics'
 
 function CV() {
   const [isFullscreen, setIsFullscreen] = useState(false)
-  const cvUrl = "https://drive.google.com/file/d/13-7gKQ0Cy0NMU48ggvG3wL3eAP9cyDFo/view?usp=drive_link"
+  const cvUrl = "https://drive.google.com/file/d/1pU-yaIPKt3YGU_Io5w8Xh5jL7YlulSgI/view?usp=sharing"
   // Convert the Google Drive link to an embeddable format
-  const embedUrl = "https://drive.google.com/file/d/13-7gKQ0Cy0NMU48ggvG3wL3eAP9cyDFo/preview"
+  const embedUrl = "https://drive.google.com/file/d/1pU-yaIPKt3YGU_Io5w8Xh5jL7YlulSgI/preview"
 
   const handleCVClick = () => {
     setIsFullscreen(true)
