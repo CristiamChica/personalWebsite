@@ -1,6 +1,6 @@
 /* CV Page Styles */
 .cv {
-  padding: 2rem 0 4rem 0;
+  padding: 40px 0;
   min-height: calc(100vh - 80px);
 }
 
@@ -17,13 +17,12 @@
 }
 
 .cv-title {
-  font-size: 3rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 40px;
   font-weight: 700;
-  line-height: 1.2;
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--ink);
   margin-bottom: 1rem;
 }
 
@@ -48,7 +47,7 @@
   height: 70vh;
   min-height: 600px;
   background: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -56,7 +55,7 @@
 }
 
 .cv-embed-container:hover {
-  border-color: #cbd5e1;
+  border-color: var(--border-strong);
   transform: translateY(-2px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
@@ -164,7 +163,7 @@
   height: 95vh;
   max-width: 1200px;
   background: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -188,18 +187,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid #e2e8f0;
-  background: #f8fafc;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-sunk);
 }
 
 .cv-modal-header h2 {
   margin: 0;
+  font-family: 'Sora', sans-serif;
   font-size: 1.5rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .cv-modal-actions {
@@ -222,20 +219,18 @@
 }
 
 .cv-drive-btn {
-  background: #2563eb;
+  background: var(--accent);
   color: white;
 }
 
 .cv-drive-btn:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+  opacity: 0.9;
 }
 
 .cv-close-btn {
   background: #f1f5f9;
   color: #475569;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
@@ -246,8 +241,8 @@
 }
 
 .cv-close-btn:hover {
-  background: #e2e8f0;
-  border-color: #cbd5e1;
+  background: var(--border);
+  border-color: var(--border-strong);
   transform: scale(1.1);
 }
 

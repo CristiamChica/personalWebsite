@@ -1,19 +1,60 @@
-/* Import shared utilities */
 @import './shared/utilities.css';
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* surfaces */
+  --bg:            #FAF7F0;
+  --surface:       #FFFFFF;
+  --surface-sunk:  #FCFAF5;
+  --chip:          #F3EEE2;
+  --chip-warm:     #FBF3E8;
 
-  color-scheme: light;
-  color: #1e293b;
-  background-color: #f8fafc;
+  /* ink / text */
+  --ink:           #20201E;
+  --text-strong:   #3A3833;
+  --text:          #52504A;
+  --muted:         #6B6862;
+  --faint:         #9B927E;
+  --faint-2:       #B9AE97;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* accent */
+  --accent:        #B23A1E;
+  --accent-soft:   #F7E7DF;
+  --accent-on-dark:#E0855C;
+
+  /* lines */
+  --border:        #ECE5D7;
+  --border-strong: #E2DACB;
+  --border-input:  #D8CFBE;
+
+  /* dark band */
+  --band-bg:       #20201E;
+  --band-text:     #FAF7F0;
+  --band-body:     #A8A398;
+  --band-line:     #3A3833;
+  --band-line-2:   #4A4843;
+
+  /* availability pill */
+  --ok-bg:         #F0F2EC;
+  --ok-border:     #DDE3D2;
+  --ok-dot:        #3D9446;
+  --ok-text:       #4A6B3E;
+
+  /* diagram strokes */
+  --net-line:      #C9BBA6;
+  --curve-2:       #7C7567;
+
+  /* brand badges */
+  --youtube:       #FF0000;
+  --tiktok:        #111111;
+  --linkedin:      #0A66C2;
+
+  /* radii */
+  --r-card: 12px;
+  --r-badge: 11px;
+  --r-icon: 10px;
+  --r-btn: 8px;
+  --r-pill: 999px;
+  --r-drop: 9999px 9999px 9999px 16px;
 }
 
 * {
@@ -23,10 +64,16 @@
 }
 
 body {
-  margin: 0;
+  font-family: 'Sora', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   overflow-x: hidden;
 }
 
@@ -34,4 +81,21 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+@keyframes scDash {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes scPulse {
+  0%, 100% { opacity: .35; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

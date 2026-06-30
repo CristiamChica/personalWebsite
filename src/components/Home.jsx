@@ -1,188 +1,221 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Home.css'
 import profilePhoto from '../assets/images/personalphotonew.jpg'
 import { papers } from '../data/papers.js'
+import { channels } from '../data/channels.js'
+import { trajectory } from '../data/trajectory.js'
+import CollusionChart from './diagrams/CollusionChart.jsx'
+import TwoSidedDiagram from './diagrams/TwoSidedDiagram.jsx'
+import PaperRow from './PaperRow.jsx'
 import { trackButtonClick, trackSocialClick } from '../utils/analytics'
 
+function NetworkGlyph() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+      stroke="var(--accent)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="5" cy="6" r="2" />
+      <circle cx="19" cy="6" r="2" />
+      <circle cx="12" cy="18" r="2" />
+      <line x1="6.7" y1="7.2" x2="10.6" y2="16.2" />
+      <line x1="17.3" y1="7.2" x2="13.4" y2="16.2" />
+      <line x1="7" y1="6" x2="17" y2="6" />
+    </svg>
+  )
+}
+
+function DocGlyph() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+      stroke="var(--accent)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 3h8l4 4v14H6z" />
+      <line x1="9" y1="11" x2="15" y2="11" />
+      <line x1="9" y1="14.5" x2="15" y2="14.5" />
+      <line x1="9" y1="18" x2="15" y2="18" />
+    </svg>
+  )
+}
+
+function BrandIcon({ brand }) {
+  if (brand === 'youtube') {
+    return (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+        <polygon points="8,5.5 20,12 8,18.5" />
+      </svg>
+    )
+  }
+  if (brand === 'tiktok') {
+    return (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+        <circle cx="8" cy="17.5" r="3.2" />
+        <rect x="10.4" y="4" width="2" height="13.5" />
+        <polygon points="12.4,4 18,5.8 18,9 12.4,7.2" />
+      </svg>
+    )
+  }
+  if (brand === 'linkedin') {
+    return (
+      <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '17px', fontWeight: 700, color: 'white', lineHeight: 1 }}>in</span>
+    )
+  }
+  return null
+}
+
 function Home() {
-  // Use shared papers data as preprints
-  const preprints = papers;
+  const [copied, setCopied] = useState(false)
 
-  const [currentPreprintIndex, setCurrentPreprintIndex] = useState(0);
-  const [showCopiedNotification, setShowCopiedNotification] = useState(false);
-
-  const nextPreprint = () => {
-    setCurrentPreprintIndex((prev) => (prev + 1) % preprints.length);
-  };
-
-  const prevPreprint = () => {
-    setCurrentPreprintIndex((prev) => (prev - 1 + preprints.length) % preprints.length);
-  };
-
-  const copyEmailToClipboard = async () => {
+  const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText('cristiam.chica@gmail.com');
-      setShowCopiedNotification(true);
-      setTimeout(() => setShowCopiedNotification(false), 2000);
-      trackButtonClick('Email Copy', 'Home Contact');
-      console.log('Email copied to clipboard!');
-    } catch (err) {
-      console.error('Failed to copy email: ', err);
-      // Fallback for older browsers
-      const textArea = document.createElement('textarea');
-      textArea.value = 'cristiam.chica@gmail.com';
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      setShowCopiedNotification(true);
-      setTimeout(() => setShowCopiedNotification(false), 2000);
-      trackButtonClick('Email Copy (Fallback)', 'Home Contact');
+      await navigator.clipboard.writeText('cristiam.chica@gmail.com')
+    } catch {
+      const ta = document.createElement('textarea')
+      ta.value = 'cristiam.chica@gmail.com'
+      document.body.appendChild(ta)
+      ta.select()
+      document.execCommand('copy')
+      document.body.removeChild(ta)
     }
-  };
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+    trackButtonClick('Email Copy', 'Home')
+  }
+
+  const selectedPapers = papers.slice(0, 3)
 
   return (
-    <section id="home" className="home">
-      <div className="home-content">
-        <div className="intro">
-          <h1 className="greeting">Cristian Camilo Chica Castaño</h1>
-          <p className="description">
-            PhD in Mathematics with experience spanning quantitative finance, academic research, and applied data science.
-            My research focuses on how multi-agent systems (e.g., Q-learning algorithms) can lead to tacit collusion in platform markets.
-            <br /><br />
-            Currently at Dapper, building data infrastructure to support expansion across Latin America and the Middle East.
-            Previously a Quantitative Strategist at Morgan Stanley, working on entity resolution, LLM-driven automation, and firm strategy.
-            <br /><br />
-            Research interests: reinforcement learning, algorithmic collusion, AI system design, legislative data analysis.
-          </p>
-        </div>
-        <div className="hero-image">
-          <div className="profile-photo">
-            <img 
-              src={profilePhoto} 
-              alt="Cristian Chica - PhD in Mathematics, Senior Data Scientist at Dapper"
-              className="profile-img"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-      
-      {/* Research Widgets Section */}
-      <div className="research-widgets">
-        <div className="widget preprints-carousel">
-          <div className="carousel-header">
-            <h3 className="widget-title">Papers</h3>
-            <div className="carousel-controls">
-              <button 
-                className="carousel-btn prev" 
-                onClick={prevPreprint}
-                disabled={preprints.length <= 1}
-                aria-label="Previous preprint"
-              >
-                ←
+    <>
+      {/* ── Hero ── */}
+      <section className="sc-hero">
+        <div className="container sc-hero-inner">
+          <div className="sc-hero-left">
+            <h1 className="sc-hero-name">Cristian Camilo Chica Castaño</h1>
+            <p className="sc-hero-position">
+               PhD in Mathematics and <strong>Senior Data Scientist</strong>.
+            </p>
+            <p className="sc-hero-intro">
+              Right now I am building the regulatory and public affairs data infrastructure for Latin America at Dapper. Before that, I was a Quantitative Strategist at Morgan
+              Stanley.
+            </p>
+            <div className="sc-hero-btns">
+              <button className="sc-btn-solid" onClick={copyEmail}>
+                {copied ? 'Copied!' : 'Get in touch'}
               </button>
-              <span className="carousel-counter">
-                {currentPreprintIndex + 1} / {preprints.length}
-              </span>
-              <button 
-                className="carousel-btn next" 
-                onClick={nextPreprint}
-                disabled={preprints.length <= 1}
-                aria-label="Next preprint"
-              >
-                →
-              </button>
+              <a className="sc-btn-outlined" href="https://www.linkedin.com/in/cccc24/" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('LinkedIn', 'redirect')}>LinkedIn</a>
+              <a className="sc-btn-outlined" href="https://scholar.google.com/citations?user=7uZo3mQAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('Google Scholar', 'redirect')}>Scholar</a>
+              <a className="sc-btn-outlined" href="https://github.com/CristiamChica" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('GitHub', 'redirect')}>GitHub</a>
             </div>
           </div>
-          
-          <div className="carousel-container">
-            <div 
-              className="carousel-track"
-              style={{
-                transform: `translateX(-${currentPreprintIndex * 100}%)`,
-                transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
-              }}
-            >
-              {preprints.map((preprint, index) => (
-                <div key={preprint.id} className="carousel-slide">
-                  <div className="paper-item">
-                    <h4 className="paper-title">
-                      {preprint.title}
-                    </h4>
-                    <p className="paper-authors">{preprint.authors}, {preprint.year}</p>
-                    <p className="paper-status">{preprint.status}</p>
-                    <div className="paper-links">
-                      <a href={preprint.pdfUrl} className="pdf-link" target="_blank" rel="noopener noreferrer">
-                        PDF
-                      </a>
-                    </div>
+          <div className="sc-hero-right">
+            <div className="sc-portrait">
+              <img src={profilePhoto} alt="Cristian Chica" className="sc-portrait-img" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Trajectory ── */}
+      <section className="sc-trajectory">
+        <div className="container">
+          <p className="sc-eyebrow">Trajectory</p>
+          <div className="sc-traj-grid">
+            {trajectory.map(stop => (
+              <div key={stop.id} className="sc-traj-stop">
+                <div className={`sc-traj-dot sc-traj-dot--${stop.dotStyle}`} />
+                <p className={`sc-traj-kicker sc-traj-kicker--${stop.id}`}>{stop.kicker}</p>
+                <p className="sc-traj-title">{stop.title}</p>
+                <p className="sc-traj-body">{stop.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Explore ── */}
+      <section className="sc-explore">
+        <div className="container">
+          <p className="sc-eyebrow">Explore</p>
+          <p className="sc-explore-lead">My papers and CV, plus a bit of math out in the world.</p>
+
+          {/* Feature cards */}
+          <div className="sc-feature-row">
+            <div className="sc-card">
+              <div className="sc-card-top">
+                <div className="sc-icon-badge"><NetworkGlyph /></div>
+                <Link to="/research" className="sc-card-link">View research →</Link>
+              </div>
+              <h3 className="sc-card-title">Research</h3>
+              <p className="sc-card-body">Papers on algorithmic collusion, two-sided markets, and dynamic pricing.</p>
+              <div className="sc-chips">
+                <span className="sc-chip">7 papers</span>
+              </div>
+            </div>
+
+            <div className="sc-card">
+              <div className="sc-card-top">
+                <div className="sc-icon-badge"><DocGlyph /></div>
+                <Link to="/cv" className="sc-card-link">View CV →</Link>
+              </div>
+              <h3 className="sc-card-title">CV</h3>
+              <p className="sc-card-body">Full record: education, industry roles, publications, and talks.</p>
+              <div className="sc-chips">
+                <span className="sc-chip">PDF</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Channel cards */}
+          <div className="sc-channel-row">
+            {channels.map(ch => (
+              <div key={ch.name} className="sc-card sc-channel-card">
+                <div className="sc-card-top">
+                  <div className={`sc-brand-badge sc-brand-badge--${ch.brand}`}>
+                    <BrandIcon brand={ch.brand} />
                   </div>
+                  <a href={ch.href} className="sc-card-link" target="_blank" rel="noopener noreferrer">{ch.cta}</a>
                 </div>
-              ))}
-            </div>
+                <h3 className="sc-channel-title">{ch.name}</h3>
+                <p className="sc-kicker">{ch.kicker}</p>
+                <p className="sc-channel-body">{ch.blurb}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-      
-      {/* Contact Buttons Section */}
-      <div className="contact-section">
-        <div className="contact-buttons">
-          <button 
-            onClick={copyEmailToClipboard}
-            className="contact-btn email-btn tooltip-container"
-            aria-label="Copy email address"
-            title="Click to copy email"
-            data-tooltip="Click to copy: cristiam.chica@gmail.com"
-          >
-            <span className="contact-text">Email</span>
-          </button>
-          <a 
-            href="https://www.linkedin.com/in/cccc24/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="contact-btn linkedin-btn tooltip-container"
-            aria-label="LinkedIn profile"
-            title="LinkedIn profile"
-            data-tooltip="Click to redirect to LinkedIn"
-            onClick={() => trackSocialClick('LinkedIn', 'redirect')}
-          >
-            <span className="contact-text">LinkedIn</span>
-          </a>
-          <a 
-            href="https://scholar.google.com/citations?user=7uZo3mQAAAAJ&hl=es&oi=ao" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="contact-btn scholar-btn tooltip-container"
-            aria-label="Google Scholar profile"
-            title="Google Scholar profile"
-            data-tooltip="Click to redirect to Google Scholar"
-            onClick={() => trackSocialClick('Google Scholar', 'redirect')}
-          >
-            <span className="contact-text">Scholar</span>
-          </a>
-          <a 
-            href="https://github.com/CristiamChica" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="contact-btn github-btn tooltip-container"
-            aria-label="GitHub profile"
-            title="GitHub profile"
-            data-tooltip="Click to redirect to GitHub"
-            onClick={() => trackSocialClick('GitHub', 'redirect')}
-          >
-            <span className="contact-text">GitHub</span>
-          </a>
+      </section>
+
+      {/* ── Selected Papers ── */}
+      <section className="sc-selected-papers">
+        <div className="container">
+          <div className="sc-sp-header">
+            <p className="sc-eyebrow" style={{ marginBottom: 0 }}>Selected papers</p>
+            <Link to="/research" className="sc-sp-all-link">All research →</Link>
+          </div>
+          <div className="sc-sp-list">
+            {selectedPapers.map((paper, i) => (
+              <PaperRow
+                key={paper.id}
+                index={i + 1}
+                title={paper.title}
+                meta={`${paper.authors} · ${paper.year}`}
+                status={paper.statusShort}
+                href={paper.paperUrl}
+                size="lg"
+              />
+            ))}
+          </div>
         </div>
+      </section>
+
+      {/* ── Diagrams (hidden, pre-render for animation) ── */}
+      <div style={{ display: 'none' }}>
+        <CollusionChart animate={false} />
+        <TwoSidedDiagram animate={false} />
       </div>
-      
-      {/* Copied to Clipboard Notification */}
-      {showCopiedNotification && (
-        <div className="copied-notification">
-          ✓ Copied to clipboard
-        </div>
+
+      {/* Toast */}
+      {copied && (
+        <div className="sc-toast">✓ Copied to clipboard</div>
       )}
-    </section>
+    </>
   )
 }
 

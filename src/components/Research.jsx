@@ -1,99 +1,109 @@
 import React from 'react'
 import './Research.css'
-import { papers, prePhDPublications, masterThesis } from '../data/papers.js'
-import { trackDownload } from '../utils/analytics'
+import { papers, prePhDPublications } from '../data/papers.js'
+import CollusionChart from './diagrams/CollusionChart.jsx'
+import TwoSidedDiagram from './diagrams/TwoSidedDiagram.jsx'
+import MembershipDiagram from './diagrams/MembershipDiagram.jsx'
+import PaperRow from './PaperRow.jsx'
+
+const THREADS = [
+  {
+    number: '01',
+    kicker: 'Algorithmic collusion',
+    title: 'When learning agents stop competing',
+    blurb: 'Conditions under which Q-learning algorithms drift from competitive pricing into a tacit, supracompetitive equilibrium, and which equilibrium concepts support that behavior.',
+    threadId: 'algorithmic-collusion',
+    Diagram: CollusionChart,
+    reverse: false
+  },
+  {
+    number: '02',
+    kicker: 'Two-sided markets',
+    title: 'Two-sided markets with network externalities',
+    blurb: 'How to model multi-homing and collusion in two-sided markets, and how network externalities affect pricing and consumer welfare.',
+    threadId: 'two-sided-markets',
+    Diagram: TwoSidedDiagram,
+    reverse: true
+  },
+  {
+    number: '03',
+    kicker: 'Dynamic Pricing',
+    title: 'The strategy underneath',
+    blurb: 'When do firms offer long-term memberships versus short-term memberships, and how these tariffs affect consumer welfare and firm profits.',
+    threadId: 'game-theory',
+    Diagram: MembershipDiagram,
+    reverse: false
+  }
+]
+
+function ThreadBlock({ thread }) {
+  const threadPapers = papers.filter(p => p.thread === thread.threadId)
+  const { Diagram } = thread
+
+  return (
+    <div className={`rs-thread${thread.reverse ? ' rs-thread--rev' : ''}`}>
+      <div className="rs-diagram-card">
+        <Diagram animate={false} />
+      </div>
+      <div className="rs-thread-text">
+        <p className="rs-thread-num">{thread.number}</p>
+        <p className="rs-kicker">{thread.kicker}</p>
+        <h3 className="rs-thread-title">{thread.title}</h3>
+        <p className="rs-thread-blurb">{thread.blurb}</p>
+        <div className="rs-thread-papers">
+          {threadPapers.map((paper, i) => (
+            <PaperRow
+              key={paper.id}
+              index={i + 1}
+              title={paper.title}
+              meta={`${paper.authors} · ${paper.year} · ${paper.statusShort}`}
+              href={paper.paperUrl}
+              size="sm"
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 function Research() {
   return (
-    <section id="research" className="research">
-      <div className="research-container container">
-        <div className="research-header">
-          <h1 className="research-title">Research Papers</h1>
+    <>
+      {/* Page header */}
+      <section className="rs-page-header">
+        <div className="container">
+          <h2 className="rs-h2">Research</h2>
+          <p className="rs-intro">
+            Three recurring threads in my work: algorithmic collusion, competition in two-sided markets with network externalities, and dynamic pricing.
+          </p>
         </div>
-        
-        <div className="papers-list">
-          {papers.map((paper, index) => (
-            <div key={paper.id} className="paper-card">
-              <div className="paper-content">
-                <h3 className="paper-title">
-                  {paper.title}
-                </h3>
-                <p className="paper-authors">{paper.authors}, {paper.year}</p>
-                <div className="paper-description">
-                  <ul>
-                    {paper.description.map((point, pointIndex) => (
-                      <li key={pointIndex}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="paper-links">
-                  <a className="paper-status">{paper.status}</a>
-                  <a href={paper.pdfUrl} 
-                     className="pdf-link" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     onClick={() => trackDownload(paper.title, 'pdf')}>
-                    View PDF
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        {/* Pre-PhD Publications Section */}
-        <div className="section-divider">
-          <h2 className="section-title">Publications (Pre-Ph.D.)</h2>
-        </div>
-        
-        <div className="publications-list">
-          {prePhDPublications.map((publication) => (
-            <div key={publication.id} className="paper-card">
-              <div className="paper-content">
-                <h3 className="paper-title">
-                  {publication.title}
-                </h3>
-                <p className="paper-authors">{publication.authors}, {publication.year}</p>
-                <div className="paper-links">
-                  <a className="paper-status">{publication.journal}</a>
-                  <a href={publication.url} 
-                     className="pdf-link" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     onClick={() => trackDownload(publication.title, 'publication')}>
-                    View Publication
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        {/* Master Thesis Section */}
-        <div className="section-divider">
-          <h2 className="section-title">Master Thesis in Mathematics</h2>
-        </div>
-        
-        <div className="thesis-card">
-          <div className="thesis-content">
-            <h3 className="thesis-title">
-              {masterThesis.title}
-            </h3>
-            <p className="thesis-university">{masterThesis.university}, {masterThesis.year}</p>
-              <p className="advisor">Advisor: {masterThesis.advisor}, Co-Advisor: {masterThesis.coAdvisor}</p>
-            <div className="thesis-links">
-              <a href={masterThesis.url} 
-                 className="thesis-link" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 onClick={() => trackDownload(masterThesis.title, 'thesis')}>
-                View Thesis
-              </a>
-            </div>
+      </section>
+
+      {/* Thread blocks */}
+      {THREADS.map(thread => (
+        <section key={thread.number} className="rs-thread-section">
+          <div className="container">
+            <ThreadBlock thread={thread} />
           </div>
+        </section>
+      ))}
+
+      {/* Earlier work */}
+      <section className="rs-earlier">
+        <div className="container">
+          <p className="rs-eyebrow">Earlier work</p>
+          {prePhDPublications.map(pub => (
+            <a key={pub.id} href={pub.url} className="rs-earlier-row" target="_blank" rel="noopener noreferrer">
+              <div className="rs-earlier-content">
+                <span className="rs-earlier-title">{pub.title}</span>
+                <span className="rs-earlier-meta">{pub.authors} · {pub.year} · {pub.journal}</span>
+              </div>
+            </a>
+          ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 

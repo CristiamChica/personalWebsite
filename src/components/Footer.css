@@ -1,8 +1,8 @@
-/* Footer Styles */
+/* Footer — Manuscript theme */
 .footer {
-  background: #ffffff;
-  border-top: 1px solid #e2e8f0;
-  padding: 2rem 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
   margin-top: auto;
 }
 
@@ -11,39 +11,31 @@
 }
 
 .footer-text p {
-  font-size: 0.9rem;
-  color: #94a3b8;
-  margin: 0.25rem 0;
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  color: var(--faint);
+  margin: 4px 0;
   line-height: 1.5;
 }
 
 .footer-privacy {
-  font-size: 0.85rem !important;
-  margin-top: 0.5rem !important;
+  font-size: 12px !important;
+  margin-top: 6px !important;
 }
 
 .footer-link {
-  color: #2563eb;
+  color: var(--accent);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: opacity 150ms ease;
 }
 
 .footer-link:hover {
-  color: #1d4ed8;
+  opacity: 0.75;
   text-decoration: underline;
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   .footer {
-    padding: 1.5rem 0;
-  }
-
-  .footer-text p {
-    font-size: 0.85rem;
-  }
-
-  .footer-privacy {
-    font-size: 0.8rem !important;
+    padding: 20px 0;
   }
 }

@@ -1,0 +1,103 @@
+.pr {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 150ms ease;
+}
+
+.pr:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.pr:hover {
+  border-top-color: var(--border-strong);
+}
+
+.pr:hover .pr-title {
+  color: var(--accent);
+}
+
+/* Index numeral */
+.pr-index {
+  font-family: 'Newsreader', serif;
+  color: var(--accent);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.pr-index--lg {
+  font-size: 24px;
+  font-weight: 400;
+  min-width: 34px;
+}
+
+.pr-index--sm {
+  font-size: 18px;
+  font-weight: 400;
+  min-width: 28px;
+}
+
+/* Body */
+.pr-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.pr-title {
+  color: var(--ink);
+  line-height: 1.4;
+  transition: color 150ms ease;
+}
+
+.pr--lg .pr-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pr--sm .pr-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pr-meta {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--faint);
+  line-height: 1.3;
+}
+
+.pr--sm .pr-meta {
+  font-size: 12px;
+}
+
+/* Status pill */
+.pr-status {
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-pill);
+  padding: 4px 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+@media (max-width: 600px) {
+  .pr {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pr-status {
+    margin-left: auto;
+  }
+}

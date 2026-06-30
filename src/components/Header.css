@@ -1,73 +1,111 @@
-.header {
-  background-color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e2e8f0;
-  padding: 1rem 0;
+.hdr {
   position: sticky;
   top: 0;
   z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
 }
 
-.header-content {
+.hdr-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1e293b;
+.hdr-logo {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
   text-decoration: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 150ms ease;
 }
 
-.logo:hover {
-  opacity: 0.7;
+.hdr-logo:hover {
+  opacity: 0.75;
 }
 
-.nav {
+.hdr-nav {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 28px;
 }
 
-.nav-link {
-  color: #475569;
-  text-decoration: none;
+.hdr-link {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
   font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #1e293b;
-}
-
-.nav-link.active {
-  color: #2563eb;
+  color: var(--muted);
+  text-decoration: none;
   position: relative;
+  transition: color 150ms ease;
+  padding-bottom: 3px;
 }
 
-.nav-link.active::after {
+.hdr-link:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hdr-link--active {
+  color: var(--accent);
+}
+
+.hdr-link--active::after {
   content: '';
   position: absolute;
-  bottom: -0.5rem;
+  bottom: -3px;
   left: 0;
   right: 0;
   height: 2px;
-  background: #2563eb;
+  background: var(--accent);
   border-radius: 1px;
 }
 
-@media (max-width: 768px) {
-  .header-content {
-    padding: 0 1rem;
+.hdr-link--active:hover {
+  text-decoration: none;
+}
+
+.hdr-contact {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--accent);
+  color: var(--band-text);
+  border: none;
+  border-radius: var(--r-btn);
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+  min-height: 44px;
+  min-width: 80px;
+}
+
+.hdr-contact:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 720px) {
+  .hdr-nav {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hdr-inner {
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 
-  .nav {
-    gap: 1rem;
+  .hdr-nav {
+    gap: 12px;
   }
 
-  .logo {
-    font-size: 1.2rem;
+  .hdr-link {
+    font-size: 13px;
   }
 }

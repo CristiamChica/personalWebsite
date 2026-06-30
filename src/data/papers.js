@@ -1,11 +1,12 @@
-// Research papers data
 export const papers = [
   {
     id: 1,
     title: "Learning to Charge More: A Theoretical Study of Collusion by Q-Learning Agents",
     authors: "Cristian Chica, Yinglong Guo and Gilad Lerman",
     status: "Submitted",
+    statusShort: "Submitted",
     year: "2025",
+    thread: "algorithmic-collusion",
     paperUrl: "https://arxiv.org/pdf/2505.22909",
     pdfUrl: "https://arxiv.org/pdf/2505.22909",
     description: [
@@ -19,7 +20,9 @@ export const papers = [
     title: "Competition and Collusion in Two-Sided Markets with an Outside Option",
     authors: "Cristian Chica, Yinglong Guo and Gilad Lerman",
     status: "R&R International Journal of Industrial Organization",
+    statusShort: "R&R IJIO",
     year: "2025",
+    thread: "two-sided-markets",
     paperUrl: "https://arxiv.org/pdf/2505.06109",
     pdfUrl: "https://arxiv.org/pdf/2505.06109",
     description: [
@@ -32,7 +35,9 @@ export const papers = [
     title: "Dynamic Competition for Customer Memberships",
     authors: "Cristian Chica, Julian Jimenez-Cardenas and Jorge Tamayo",
     status: "Journal of Economics & Management Strategy, 34, 525-556 (2025)",
+    statusShort: "JEMS 2025",
     year: "2025",
+    thread: "game-theory",
     paperUrl: "https://doi.org/10.1111/jems.12605",
     pdfUrl: "https://doi.org/10.1111/jems.12605",
     description: [
@@ -45,7 +50,9 @@ export const papers = [
     title: "Artificial Intelligence and Algorithmic Price Collusion in Two-sided Markets",
     authors: "Cristian Chica, Yinglong Guo and Gilad Lerman",
     status: "Submitted",
+    statusShort: "Submitted",
     year: "2024",
+    thread: "algorithmic-collusion",
     paperUrl: "https://arxiv.org/pdf/2407.04088",
     pdfUrl: "https://arxiv.org/pdf/2407.04088",
     description: [
@@ -58,7 +65,9 @@ export const papers = [
     title: "Exclusive Dealing and Entry by Competing Two-Sided Platforms",
     authors: "Cristian Chica, Kenneth Chuk and Jorge Tamayo",
     status: "R&R International Journal of Industrial Organization",
+    statusShort: "R&R IJIO",
     year: "2021",
+    thread: "two-sided-markets",
     paperUrl: "https://www.hbs.edu/ris/Publication%20Files/21-092_3905ed04-8a4c-4655-9f6b-b5242a0dbacf.pdf",
     pdfUrl: "https://www.hbs.edu/ris/Publication%20Files/21-092_3905ed04-8a4c-4655-9f6b-b5242a0dbacf.pdf",
     description: [
@@ -67,32 +76,29 @@ export const papers = [
   }
 ];
 
-// Pre-PhD Publications data
 export const prePhDPublications = [
   {
     id: 1,
     title: "A Big Data Based Method for Pass Rates Optimization in Mathematics University Lower Division Courses",
     authors: "Cristian Chica, Fernando Morales, Carlos Osorio, Daniel Cabarcas",
-    journal: "SN COMPUT. SCI. 6, 330",
+    journal: "SN Comput. Sci. 6, 330",
     year: "2025",
     url: "https://doi.org/10.1007/s42979-025-03809-5"
   },
   {
     id: 2,
-    title: "Analysis of the offshoring network: Empirical evidence of the implied comparative advantage in offshoring",
+    title: "Analysis of the Offshoring Network: Implied Comparative Advantage",
     authors: "Mery Tamayo, Cristian Chica and Gustavo Canavire",
-    journal: "The Journal of International Trade & Economic Development",
+    journal: "J. Int. Trade & Econ. Dev.",
     year: "2020",
     url: "https://www.tandfonline.com/doi/full/10.1080/09638199.2020.1804605"
+  },
+  {
+    id: 3,
+    title: "Some Aspects of the Obstacle Problem",
+    university: "Universidad Nacional de Colombia Sede Medellín",
+    year: "2020",
+    authors: "Advisor: Carlos Augusto Vélez López, Co-Advisor: Luis Felipe Duque Álvarez",
+    url: "https://repositorio.unal.edu.co/bitstream/handle/unal/78158/1020469622.2020.pdf?sequence=4&isAllowed=y"
   }
 ];
-
-// Master Thesis data
-export const masterThesis = {
-  title: "Some Aspects of the Obstacle Problem",
-  university: "Universidad Nacional de Colombia Sede Medellín",
-  year: "2020",
-  advisor: "Carlos Augusto Vélez López",
-  coAdvisor: "Luis Felipe Duque Álvarez",
-  url: "https://repositorio.unal.edu.co/bitstream/handle/unal/78158/1020469622.2020.pdf?sequence=4&isAllowed=y"
-};
