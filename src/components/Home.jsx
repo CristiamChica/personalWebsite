@@ -103,6 +103,7 @@ function Home() {
               <a className="sc-btn-outlined" href="https://www.linkedin.com/in/cccc24/" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('LinkedIn', 'redirect')}>LinkedIn</a>
               <a className="sc-btn-outlined" href="https://scholar.google.com/citations?user=7uZo3mQAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('Google Scholar', 'redirect')}>Scholar</a>
               <a className="sc-btn-outlined" href="https://github.com/CristiamChica" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('GitHub', 'redirect')}>GitHub</a>
+              <a className="sc-btn-outlined" href="https://x.com/ccchicac" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('X', 'redirect')}>X</a>
             </div>
           </div>
           <div className="sc-hero-right">
