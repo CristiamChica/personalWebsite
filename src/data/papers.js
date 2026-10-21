@@ -102,3 +102,73 @@ export const prePhDPublications = [
     url: "https://repositorio.unal.edu.co/bitstream/handle/unal/78158/1020469622.2020.pdf?sequence=4&isAllowed=y"
   }
 ];
+
+// Papers crediting Cristian as a research assistant in the acknowledgments
+// (Jorge Tamayo and coauthors, HBS 2018–2021). Ordered: published → accepted → R&R → working papers.
+// `year` is the publication year, or the year of the latest version checked.
+export const researchAssistance = [
+  {
+    id: 1,
+    title: "Formal Employment and Organized Crime: Regression Discontinuity Evidence from Colombia",
+    authors: "Gaurav Khanna, Carlos Medina, Anant Nyshadham, Jorge Tamayo, Nicolás Torres",
+    venue: "The Economic Journal 133, 2427–2448",
+    year: "2023",
+    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=uead025.pdf"
+  },
+  {
+    id: 2,
+    title: "Helping Children Catch Up: Early Life Shocks and the PROGRESA Experiment",
+    authors: "Achyuta Adhvaryu, Teresa Molina, Anant Nyshadham, Jorge Tamayo",
+    venue: "The Economic Journal 134(657)",
+    year: "2024",
+    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=uead067.pdf"
+  },
+  {
+    id: 3,
+    title: "Absenteeism, Productivity, and Relational Contracts Inside the Firm",
+    authors: "Achyuta Adhvaryu, Jean-François Gauthier, Anant Nyshadham, Jorge Tamayo",
+    venue: "Journal of the European Economic Association 22(4), 1628–1677",
+    year: "2024",
+    url: "https://www.nber.org/papers/w29581"
+  },
+  {
+    id: 4,
+    title: "An Anatomy of Performance Monitoring",
+    authors: "Achyuta Adhvaryu, Anant Nyshadham, Jorge Tamayo",
+    venue: "Accepted, Journal of Political Economy",
+    year: "2024",
+    url: "https://www.hbs.edu/ris/Publication%20Files/22-066_3c5abc63-bac0-4c34-b53b-3bda4d14e75e.pdf"
+  },
+  {
+    id: 5,
+    title: "Spatial Mobility, Economic Opportunity, and Crime",
+    authors: "Gaurav Khanna, Carlos Medina, Anant Nyshadham, Daniel Ramos-Menchelli, Jorge Tamayo, Audrey Tiew",
+    venue: "R&R, American Economic Review",
+    year: "2023",
+    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=24-016.pdf"
+  },
+  {
+    id: 6,
+    title: "Diagnosing Quality: Learning, Amenities, and the Demand for Health Care",
+    authors: "Achyuta Adhvaryu, Emilio Gutierrez, Anant Nyshadham, Jorge Tamayo",
+    venue: "Working paper, HBS WP 21-110",
+    year: "2021",
+    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=WP21-110v2.pdf"
+  },
+  {
+    id: 7,
+    title: "Competitive Two-Part Tariffs",
+    authors: "Jorge Tamayo, Guofu Tan",
+    venue: "Working paper, HBS WP 21-089",
+    year: "2025",
+    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=21-089.pdf"
+  },
+  {
+    id: 8,
+    title: "Prices and Concentration: A U-shape? Theory and Evidence from Renewables",
+    authors: "Michele Fioretti, Junnan He, Jorge Tamayo",
+    venue: "Working paper, HBS WP 25-049",
+    year: "2025",
+    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=25-049.pdf"
+  }
+];

@@ -135,6 +135,32 @@
   color: var(--text-muted);
 }
 
+/* ── Research assistance — same ledger, one step quieter ── */
+.rs-assist {
+  padding-top: 0;
+}
+
+.rs-assist-intro {
+  font: var(--weight-regular) var(--size-body-s)/var(--leading-normal) var(--font-sans);
+  color: var(--text-muted);
+  max-width: 620px;
+  margin-top: calc(-1 * var(--space-3));
+  margin-bottom: var(--space-6);
+}
+
+.rs-assist .rs-earlier-row {
+  padding: var(--space-4) 0;
+}
+
+.rs-assist .rs-earlier-title {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.rs-assist .rs-earlier-meta {
+  font-size: var(--size-caption);
+}
+
 /* ── Responsive ── */
 @media (max-width: 860px) {
   .rs-thread,

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Research.css'
-import { papers, prePhDPublications } from '../data/papers.js'
+import { papers, prePhDPublications, researchAssistance } from '../data/papers.js'
 import CollusionChart from './diagrams/CollusionChart.jsx'
 import TwoSidedDiagram from './diagrams/TwoSidedDiagram.jsx'
 import MembershipDiagram from './diagrams/MembershipDiagram.jsx'
@@ -98,6 +98,24 @@ function Research() {
               <div className="rs-earlier-content">
                 <span className="rs-earlier-title">{pub.title}</span>
                 <span className="rs-earlier-meta">{pub.authors} · {pub.year} · {pub.journal}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Research assistance */}
+      <section className="rs-earlier rs-assist">
+        <div className="container">
+          <h4 className="overline rs-eyebrow">Research assistance</h4>
+          <p className="rs-assist-intro">
+            As a research assistant at Harvard Business School (2018–2021), I contributed to the following projects with Jorge Tamayo and coauthors (credited in the acknowledgments).
+          </p>
+          {researchAssistance.map(pub => (
+            <a key={pub.id} href={pub.url} className="rs-earlier-row" target="_blank" rel="noopener noreferrer">
+              <div className="rs-earlier-content">
+                <span className="rs-earlier-title">{pub.title}</span>
+                <span className="rs-earlier-meta">{pub.authors} · <em>{pub.venue}</em> · {pub.year}</span>
               </div>
             </a>
           ))}
