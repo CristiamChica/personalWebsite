@@ -33,7 +33,7 @@
 .pr-index {
   font-family: var(--font-display);
   font-weight: var(--weight-medium);
-  color: var(--text-muted);
+  color: var(--sienna-500);
   flex-shrink: 0;
   line-height: 1;
   font-variant-numeric: lining-nums tabular-nums;

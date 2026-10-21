@@ -15,8 +15,8 @@ function CollusionChart({ animate = false }) {
       <line x1="22" y1="126" x2="246" y2="126" stroke="var(--border-strong)" strokeWidth="1" />
 
       {/* Collusive reference line */}
-      <line x1="22" y1="34" x2="246" y2="34" stroke="var(--sienna-500)" strokeWidth="1" strokeDasharray="4 5" />
-      <text x="26" y="28" fill="var(--sienna-600)" fontSize="9" fontFamily="'IBM Plex Mono', monospace" fontWeight="500">collusive</text>
+      <line x1="22" y1="34" x2="246" y2="34" stroke="var(--artemisia-500)" strokeWidth="1" strokeDasharray="4 5" />
+      <text x="26" y="28" fill="var(--artemisia-700)" fontSize="9" fontFamily="'IBM Plex Mono', monospace" fontWeight="500">collusive</text>
 
       {/* Competitive reference line */}
       <line x1="22" y1="112" x2="246" y2="112" stroke="var(--stone-400)" strokeWidth="1" strokeDasharray="4 5" />
@@ -34,7 +34,7 @@ function CollusionChart({ animate = false }) {
       {/* Curve B */}
       <path
         d="M22,116 C76,114 104,82 144,64 S230,42 246,40"
-        stroke="var(--chart-3)"
+        stroke="var(--chart-2)"
         strokeWidth="2.2"
         strokeLinecap="round"
         style={curve2Style}

@@ -12,7 +12,7 @@ function TwoSidedDiagram({ animate = false }) {
     <svg viewBox="0 0 252 150" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: 'auto', display: 'block' }}>
       <defs>
         <marker id="tsd-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-          <path d="M0,0 L6,3 L0,6 Z" fill="var(--chart-1)" />
+          <path d="M0,0 L6,3 L0,6 Z" fill="var(--chart-2)" />
         </marker>
       </defs>
 
@@ -41,7 +41,7 @@ function TwoSidedDiagram({ animate = false }) {
       ))}
 
       {/* Network effect arc */}
-      <path d="M36,40 Q126,2 216,40" stroke="var(--chart-1)" strokeWidth="1.6" strokeDasharray="4 4" markerEnd="url(#tsd-arrow)" />
+      <path d="M36,40 Q126,2 216,40" stroke="var(--chart-2)" strokeWidth="1.6" strokeDasharray="4 4" markerEnd="url(#tsd-arrow)" />
       <text x="126" y="14" fill="var(--stone-400)" fontSize="9" fontFamily="'IBM Plex Mono', monospace" textAnchor="middle">network effect</text>
 
       {/* Side labels */}

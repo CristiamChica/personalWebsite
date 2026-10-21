@@ -14,7 +14,7 @@ import { trackButtonClick, trackSocialClick } from '../utils/analytics'
 function NetworkGlyph() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-      stroke="var(--midori-600)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      stroke="var(--sienna-600)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="5" cy="6" r="2" />
       <circle cx="19" cy="6" r="2" />
       <circle cx="12" cy="18" r="2" />
@@ -28,7 +28,7 @@ function NetworkGlyph() {
 function DocGlyph() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-      stroke="var(--midori-600)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      stroke="var(--sienna-600)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M6 3h8l4 4v14H6z" />
       <line x1="9" y1="11" x2="15" y2="11" />
       <line x1="9" y1="14.5" x2="15" y2="14.5" />

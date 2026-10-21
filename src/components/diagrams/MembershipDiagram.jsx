@@ -40,21 +40,21 @@ function MembershipDiagram({ animate = false }) {
       {/* ── Short-term: low intro → jump at renewal ── */}
       {/* Period 1: intro price below long-term */}
       <line x1="22" y1="100" x2="134" y2="100"
-        stroke="var(--chart-3)" strokeWidth="2.2" strokeLinecap="round"
+        stroke="var(--chart-2)" strokeWidth="2.2" strokeLinecap="round"
         style={short1Style} />
       {/* Jump connector */}
       <line x1="134" y1="100" x2="134" y2="46"
-        stroke="var(--chart-3)" strokeWidth="1.4" strokeDasharray="3 3" />
+        stroke="var(--chart-2)" strokeWidth="1.4" strokeDasharray="3 3" />
       {/* Period 2: lock-in price above long-term */}
       <line x1="134" y1="46" x2="246" y2="46"
-        stroke="var(--chart-3)" strokeWidth="2.2" strokeLinecap="round"
+        stroke="var(--chart-2)" strokeWidth="2.2" strokeLinecap="round"
         style={short2Style} />
 
       {/* Open circle — price before renewal */}
       <circle cx="134" cy="100" r="3.5"
-        fill="var(--surface-card)" stroke="var(--chart-3)" strokeWidth="1.5" />
+        fill="var(--surface-card)" stroke="var(--chart-2)" strokeWidth="1.5" />
       {/* Filled circle — new price after renewal */}
-      <circle cx="134" cy="46" r="3.5" fill="var(--chart-3)" />
+      <circle cx="134" cy="46" r="3.5" fill="var(--chart-2)" />
 
       <text x="26" y="115" fill="var(--stone-400)" fontSize="9"
         fontFamily="'IBM Plex Mono', monospace" fontWeight="500">short-term</text>

@@ -48,7 +48,7 @@
 }
 
 .hdr-link--active {
-  color: var(--midori-600);
+  color: var(--text-primary);
 }
 
 .hdr-link--active::after {
@@ -58,7 +58,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--midori-500);
+  background: var(--sienna-500);
 }
 
 .hdr-contact {
