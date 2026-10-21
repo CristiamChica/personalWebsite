@@ -1,0 +1,15 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Feedback" subtitle="Dialog, Toast, Tooltip" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script><style>body{background:var(--surface-page);padding:24px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:16px}.lbl{font:600 11px/1 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);width:80px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const { Dialog, Toast, Tooltip, Button } = window.AGTDesignSystem_48f3d6;
+function Demo(){return <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:20,alignItems:'start'}}>
+<Dialog open inline width={320} eyebrow="Loan AGT-2291" title="Accept loan terms?" onClose={()=>{}} footer={<><Button variant="ghost" size="s">Cancel</Button><Button variant="accent" size="s">Accept and sign</Button></>}>$48,000 at 9.2% APR, repaid from your soybean harvest by March 2027.</Dialog>
+<div className="col"><Toast tone="positive" title="Field data received" message="Verification usually takes under 24 hours." onClose={()=>{}} style={{width:'100%'}}/><Toast tone="caution" title="Imagery delayed" message="Cloud cover over Field 14." style={{width:'100%'}}/>
+<div style={{paddingTop:36}}><Tooltip open content="Normalized Difference Vegetation Index"><span style={{font:'600 14px var(--font-sans)',borderBottom:'1px dotted var(--text-muted)'}}>NDVI</span></Tooltip></div></div>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

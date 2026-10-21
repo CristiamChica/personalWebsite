@@ -1,19 +1,17 @@
-/* Cookie Consent Banner Styles */
+/* Cookie consent banner — inverse surface, AGT design system */
 .cookie-consent-banner {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(15, 23, 42, 0.97);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem;
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+  padding: var(--space-5) var(--space-6);
   z-index: 1000;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-3);
 
-  /* Smooth slide-in animation */
   transform: translateY(100%);
-  transition: transform 0.3s ease-out;
+  transition: transform var(--duration-slow) var(--ease-standard);
   will-change: transform;
 }
 
@@ -25,9 +23,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1040px;
   margin: 0 auto;
-  gap: 1.5rem;
+  gap: var(--space-7);
 }
 
 .cookie-consent-text {
@@ -36,118 +34,100 @@
 
 .cookie-consent-text p {
   margin: 0;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.4;
+  font: var(--weight-regular) var(--size-body-s)/1.5 var(--font-sans);
+  color: var(--artemisia-200);
 }
 
 .cookie-consent-link {
-  color: #60a5fa;
+  color: var(--byakuroku-300);
   text-decoration: underline;
-  transition: color 0.3s ease;
-  border-radius: 2px;
-  outline-offset: 2px;
+  text-underline-offset: 2px;
 }
 
-.cookie-consent-link:hover,
-.cookie-consent-link:focus {
-  color: #93c5fd;
-  outline: 2px solid #2563eb;
+.cookie-consent-link:hover {
+  color: var(--byakuroku-100);
 }
 
 .cookie-consent-buttons {
   display: flex;
-  gap: 0.75rem;
+  gap: var(--space-3);
   flex-shrink: 0;
 }
 
 .cookie-btn {
-  padding: 0.6rem 1.25rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--control-h-m);
+  min-width: 88px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-m);
+  font: var(--weight-semibold) 14px/1 var(--font-sans);
+  letter-spacing: 0.01em;
   cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 80px;
-  outline-offset: 2px;
-  position: relative;
-  overflow: hidden;
+  transition: var(--transition-color);
 }
 
-.cookie-btn:focus {
-  outline: 2px solid #2563eb;
+.cookie-btn:focus-visible {
+  box-shadow: 0 0 0 2px var(--artemisia-900), 0 0 0 4px var(--midori-300);
 }
 
 .cookie-btn-decline {
   background: transparent;
-  color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-inverse);
+  border-color: var(--artemisia-600);
 }
 
-.cookie-btn-decline:hover,
-.cookie-btn-decline:focus {
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.9);
-  border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-1px);
+.cookie-btn-decline:hover {
+  background: var(--artemisia-800);
+}
+
+.cookie-btn-decline:active {
+  background: var(--artemisia-700);
 }
 
 .cookie-btn-accept {
-  background: #2563eb;
-  color: white;
-  border: 1px solid transparent;
+  background: var(--action-primary);
+  color: var(--text-on-primary);
 }
 
-.cookie-btn-accept:hover,
-.cookie-btn-accept:focus {
-  background: #1d4ed8;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+.cookie-btn-accept:hover {
+  background: var(--action-primary-hover);
 }
 
-/* Mobile responsiveness */
+.cookie-btn-accept:active {
+  background: var(--action-primary-press);
+}
+
 @media (max-width: 768px) {
   .cookie-consent-banner {
-    padding: 1.25rem 1rem;
+    padding: var(--space-5);
   }
 
   .cookie-consent-content {
     flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  .cookie-consent-text p {
-    font-size: 0.85rem;
+    align-items: stretch;
+    gap: var(--space-5);
   }
 
   .cookie-consent-buttons {
     width: 100%;
-    justify-content: center;
-    gap: 1rem;
   }
 
   .cookie-btn {
     flex: 1;
-    max-width: 140px;
-    min-height: 44px;
-    font-size: 0.95rem;
+    height: var(--control-h-l);
   }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .cookie-consent-banner {
-    transition: none;
-  }
-
+  .cookie-consent-banner,
   .cookie-btn {
     transition: none;
   }
 }
 
-/* High contrast mode */
 @media (prefers-contrast: high) {
   .cookie-consent-banner {
     background: black;

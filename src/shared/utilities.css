@@ -3,17 +3,182 @@
 .container {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding-left: var(--page-margin);
+  padding-right: var(--page-margin);
 }
 
 @media (max-width: 720px) {
   .container {
-    padding: 0 20px;
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 16px;
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
   }
+}
+
+/* Overline — the only uppercase in the system */
+.overline {
+  font: var(--overline);
+  letter-spacing: var(--tracking-overline);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Buttons — mirror agt-design/components/actions/Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  height: var(--control-h-l);
+  padding: 0 var(--space-6);
+  font: var(--weight-semibold) var(--size-body)/1 var(--font-sans);
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-m);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: var(--transition-color);
+}
+
+.btn--m {
+  height: var(--control-h-m);
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+.btn--s {
+  height: var(--control-h-s);
+  padding: 0 10px;
+  font-size: var(--size-body-s);
+}
+
+.btn--primary {
+  background: var(--action-primary);
+  color: var(--text-on-primary);
+}
+.btn--primary:hover  { background: var(--action-primary-hover); color: var(--text-on-primary); }
+.btn--primary:active { background: var(--action-primary-press); }
+
+.btn--accent {
+  background: var(--action-accent);
+  color: #fff;
+}
+.btn--accent:hover  { background: var(--action-accent-hover); color: #fff; }
+.btn--accent:active { background: var(--action-accent-press); }
+
+.btn--secondary {
+  background: var(--action-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+.btn--secondary:hover  { background: var(--action-secondary-hover); color: var(--text-primary); }
+.btn--secondary:active { background: var(--stone-200); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text-primary);
+}
+.btn--ghost:hover  { background: var(--stone-100); color: var(--text-primary); }
+.btn--ghost:active { background: var(--stone-200); }
+
+.btn:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+/* Text link with arrow — used for "View research →" style actions */
+.link-action {
+  font: var(--weight-semibold) var(--size-body-s)/1.3 var(--font-sans);
+  color: var(--text-link);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.link-action:hover {
+  color: var(--midori-700);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Badge — mirror agt-design/components/display/Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-pill);
+  font: var(--weight-semibold) var(--size-caption)/1 var(--font-sans);
+  white-space: nowrap;
+  background: var(--stone-100);
+  color: var(--stone-700);
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--stone-500);
+  flex-shrink: 0;
+}
+
+.badge--positive { background: var(--midori-50); color: var(--midori-700); }
+.badge--positive .badge-dot { background: var(--midori-500); }
+.badge--accent   { background: var(--sienna-50); color: var(--sienna-700); }
+.badge--accent .badge-dot { background: var(--sienna-500); }
+.badge--info     { background: var(--artemisia-50); color: var(--artemisia-700); }
+.badge--info .badge-dot { background: var(--artemisia-500); }
+
+/* Tag — mirror agt-design/components/display/Tag */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: var(--control-h-s);
+  padding: 0 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-s);
+  background: var(--surface-raised);
+  color: var(--text-body);
+  font: var(--weight-medium) var(--size-body-s)/1 var(--font-sans);
+  white-space: nowrap;
+}
+
+/* Toast — mirror agt-design/components/feedback/Toast */
+.toast {
+  position: fixed;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: calc(100vw - var(--space-8));
+  padding: 14px var(--space-5);
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-3);
+  font: var(--weight-semibold) 14px/1.3 var(--font-sans);
+  z-index: 1000;
+  animation: toast-in var(--duration-slow) var(--ease-standard) both;
+}
+
+.toast-mark {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--midori-300);
+  flex-shrink: 0;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translate(-50%, 8px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
 }

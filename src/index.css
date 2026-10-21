@@ -1,74 +1,28 @@
+/* AGT design system tokens (src/agt-design). Fonts are loaded via <link> in index.html. */
+@import './agt-design/tokens/colors.css';
+@import './agt-design/tokens/typography.css';
+@import './agt-design/tokens/spacing.css';
+@import './agt-design/tokens/effects.css';
 @import './shared/utilities.css';
 
 :root {
-  /* surfaces */
-  --bg:            #FAF7F0;
-  --surface:       #FFFFFF;
-  --surface-sunk:  #FCFAF5;
-  --chip:          #F3EEE2;
-  --chip-warm:     #FBF3E8;
-
-  /* ink / text */
-  --ink:           #20201E;
-  --text-strong:   #3A3833;
-  --text:          #52504A;
-  --muted:         #6B6862;
-  --faint:         #9B927E;
-  --faint-2:       #B9AE97;
-
-  /* accent */
-  --accent:        #B23A1E;
-  --accent-soft:   #F7E7DF;
-  --accent-on-dark:#E0855C;
-
-  /* lines */
-  --border:        #ECE5D7;
-  --border-strong: #E2DACB;
-  --border-input:  #D8CFBE;
-
-  /* dark band */
-  --band-bg:       #20201E;
-  --band-text:     #FAF7F0;
-  --band-body:     #A8A398;
-  --band-line:     #3A3833;
-  --band-line-2:   #4A4843;
-
-  /* availability pill */
-  --ok-bg:         #F0F2EC;
-  --ok-border:     #DDE3D2;
-  --ok-dot:        #3D9446;
-  --ok-text:       #4A6B3E;
-
-  /* diagram strokes */
-  --net-line:      #C9BBA6;
-  --curve-2:       #7C7567;
-
-  /* brand badges */
-  --youtube:       #FF0000;
-  --tiktok:        #111111;
-  --linkedin:      #0A66C2;
-
-  /* radii */
-  --r-card: 12px;
-  --r-badge: 11px;
-  --r-icon: 10px;
-  --r-btn: 8px;
-  --r-pill: 999px;
-  --r-drop: 9999px 9999px 9999px 16px;
+  /* site-level aliases on top of AGT semantics */
+  --overline: var(--weight-semibold) var(--size-overline)/1 var(--font-sans);
+  --transition-color: color var(--duration-fast) var(--ease-standard),
+                      background-color var(--duration-fast) var(--ease-standard),
+                      border-color var(--duration-fast) var(--ease-standard);
 }
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Sora', system-ui, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
-  font-weight: 400;
+  font: var(--type-body);
+  background: var(--surface-page);
+  color: var(--text-body);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -81,6 +35,32 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--midori-700);
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-xs);
+}
+
+::selection {
+  background: var(--surface-selected);
+  color: var(--text-primary);
 }
 
 @keyframes scDash {

@@ -35,8 +35,8 @@ function Header() {
           <Link to="/cv" className={`hdr-link${location.pathname === '/cv' ? ' hdr-link--active' : ''}`}>
             CV
           </Link>
-          <button className="hdr-contact" onClick={copyEmail}>
-            {copied ? 'Copied!' : 'Contact'}
+          <button className="btn btn--primary btn--m hdr-contact" onClick={copyEmail}>
+            {copied ? 'Copied' : 'Contact'}
           </button>
         </nav>
       </div>

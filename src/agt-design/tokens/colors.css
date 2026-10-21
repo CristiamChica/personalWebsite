@@ -1,0 +1,33 @@
+/* AGT color tokens — derived from Sanzo Wada, A Dictionary of Color Combinations, No. 293 */
+:root{
+/* Hiwada · Raw Sienna — accent, soil, emphasis */
+--sienna-50:#FBEFE7;--sienna-100:#F6D9C6;--sienna-200:#EDB592;--sienna-300:#E08C5C;--sienna-400:#D16B33;--sienna-500:#C2521A;--sienna-600:#A2420F;--sienna-700:#80340C;--sienna-800:#5E270B;--sienna-900:#3D1A08;
+/* Byakuroku · Turquoise Green — soft surfaces, selection, calm */
+--byakuroku-50:#F1F7F6;--byakuroku-100:#DDECE9;--byakuroku-200:#C3DDD8;--byakuroku-300:#A9CBC5;--byakuroku-400:#86B2AA;--byakuroku-500:#64968E;--byakuroku-600:#4C7A72;--byakuroku-700:#3A5F59;--byakuroku-800:#29433F;--byakuroku-900:#182826;
+/* Chigusa · Artemisia Green — structure, navigation, data */
+--artemisia-50:#EEF2F3;--artemisia-100:#D7E0E2;--artemisia-200:#B5C5C8;--artemisia-300:#93A9AD;--artemisia-400:#789296;--artemisia-500:#5F7F84;--artemisia-600:#4C686C;--artemisia-700:#3B5256;--artemisia-800:#2A3C3F;--artemisia-900:#1A2628;
+/* Midori · Green — primary brand, actions, growth */
+--midori-50:#EAF4EC;--midori-100:#CBE5D1;--midori-200:#9DCDA8;--midori-300:#6DB27F;--midori-400:#46985D;--midori-500:#2E7A45;--midori-600:#246638;--midori-700:#1B512C;--midori-800:#133B20;--midori-900:#0B2614;
+/* Stone neutrals — cool mineral greys tinted toward artemisia */
+--stone-0:#FFFFFF;--stone-25:#FAFBFB;--stone-50:#F2F5F5;--stone-100:#E4E9E9;--stone-200:#CFD7D8;--stone-300:#B0BBBD;--stone-400:#8C989A;--stone-500:#6B7779;--stone-600:#515C5E;--stone-700:#3A4446;--stone-800:#262E30;--stone-900:#161C1D;
+/* Support hue for caution (ochre, sits between sienna and midori) */
+--ochre-100:#F5E6C4;--ochre-500:#B8862B;--ochre-700:#7D5A17;
+--crimson-100:#F5D5CC;--crimson-500:#A8361C;--crimson-700:#7A2512;
+
+/* ——— Semantic aliases ——— */
+--brand-primary:var(--midori-500);--brand-accent:var(--sienna-500);--brand-structure:var(--artemisia-500);--brand-soft:var(--byakuroku-300);
+--surface-page:var(--stone-50);--surface-card:var(--stone-0);--surface-raised:var(--stone-0);--surface-sunken:var(--stone-100);--surface-tint:var(--byakuroku-50);--surface-selected:var(--byakuroku-100);--surface-inverse:var(--artemisia-900);--surface-nav:var(--artemisia-800);
+--text-primary:var(--stone-900);--text-body:var(--stone-800);--text-secondary:var(--stone-600);--text-muted:var(--stone-500);--text-inverse:var(--stone-25);--text-link:var(--midori-600);--text-accent:var(--sienna-600);--text-on-primary:#FFFFFF;
+--border-hairline:var(--stone-200);--border-strong:var(--stone-300);--border-ink:var(--stone-800);--border-focus:var(--midori-500);
+--action-primary:var(--midori-500);--action-primary-hover:var(--midori-600);--action-primary-press:var(--midori-700);
+--action-accent:var(--sienna-500);--action-accent-hover:var(--sienna-600);--action-accent-press:var(--sienna-700);
+--action-secondary:var(--stone-25);--action-secondary-hover:var(--stone-100);
+--status-positive:var(--midori-500);--status-positive-bg:var(--midori-50);
+--status-caution:var(--ochre-500);--status-caution-bg:var(--ochre-100);
+--status-critical:var(--crimson-500);--status-critical-bg:var(--crimson-100);
+--status-info:var(--artemisia-500);--status-info-bg:var(--artemisia-50);
+/* Data visualization — series order */
+--chart-1:var(--midori-500);--chart-2:var(--sienna-500);--chart-3:var(--artemisia-500);--chart-4:var(--byakuroku-400);--chart-5:var(--ochre-500);
+/* Crop vigor (NDVI) ramp: bare soil → dense canopy */
+--ndvi-0:var(--sienna-600);--ndvi-1:var(--sienna-300);--ndvi-2:var(--ochre-500);--ndvi-3:var(--byakuroku-400);--ndvi-4:var(--midori-400);--ndvi-5:var(--midori-700);
+}

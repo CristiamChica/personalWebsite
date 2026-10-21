@@ -1,0 +1,3 @@
+/** Text input with label, hint, error, prefix/suffix (units). */
+export interface InputProps{ label?:string; hint?:string; error?:string; prefix?:React.ReactNode; suffix?:React.ReactNode; /** tabular mono for figures */ mono?:boolean; value?:string; defaultValue?:string; placeholder?:string; type?:string; disabled?:boolean; id?:string; onChange?:(e:any)=>void; style?:React.CSSProperties; }
+export declare function Input(props:InputProps):JSX.Element;

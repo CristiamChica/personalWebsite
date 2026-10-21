@@ -26,8 +26,9 @@ function Privacy() {
       
       // Better user feedback with toast-style notification
       const notification = document.createElement('div')
-      notification.textContent = '✅ Successfully opted out of analytics tracking'
-      notification.className = 'privacy-notification success'
+      notification.textContent = 'Opted out of analytics tracking'
+      notification.className = 'toast'
+      notification.setAttribute('role', 'status')
       document.body.appendChild(notification)
       
       setTimeout(() => {
@@ -51,8 +52,9 @@ function Privacy() {
       
       // Better user feedback
       const notification = document.createElement('div')
-      notification.textContent = '📊 Successfully opted back into analytics tracking'
-      notification.className = 'privacy-notification success'
+      notification.textContent = 'Opted back in to analytics tracking'
+      notification.className = 'toast'
+      notification.setAttribute('role', 'status')
       document.body.appendChild(notification)
       
       setTimeout(() => {
@@ -198,10 +200,10 @@ function Privacy() {
               <p>You can opt out of analytics tracking for this website specifically:</p>
               {isOptedOut ? (
                 <div className="opt-out-container">
-                  <p className="opt-out-status success">✅ You are currently opted out of analytics tracking</p>
+                  <p className="badge badge--positive"><span className="badge-dot" />You are opted out of analytics tracking</p>
                   <button 
                     onClick={handleOptIn} 
-                    className="opt-in-button"
+                    className="btn btn--primary btn--m"
                     disabled={isLoading}
                     aria-label="Opt back into analytics tracking"
                   >
@@ -210,10 +212,10 @@ function Privacy() {
                 </div>
               ) : (
                 <div className="opt-out-container">
-                  <p className="opt-out-status active">📊 Analytics tracking is currently enabled</p>
+                  <p className="badge badge--info"><span className="badge-dot" />Analytics tracking is enabled</p>
                   <button 
                     onClick={handleOptOut} 
-                    className="opt-out-button"
+                    className="btn btn--secondary btn--m"
                     disabled={isLoading}
                     aria-label="Opt out of analytics tracking"
                   >

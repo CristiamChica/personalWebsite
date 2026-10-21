@@ -1,0 +1,21 @@
+<!-- @dsCard group="Components" viewport="700x400" name="Display" subtitle="Card, Stat, Badge, Tag, Progress, Plate" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script><style>body{background:var(--surface-page);padding:24px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:16px}.lbl{font:600 11px/1 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);width:80px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const { Card, Stat, Badge, Tag, Progress, Plate, Button } = window.AGTDesignSystem_48f3d6;
+function Demo(){return <div className="col">
+<div style={{display:'grid',gridTemplateColumns:'1.3fr 1fr',gap:16}}>
+<Card eyebrow="Field 14 · Soybean" title="Crop vigor" action={<Badge tone="positive">Healthy</Badge>}>
+<div style={{display:'flex',gap:32}}><Stat label="NDVI" value="0.74" delta="+0.06" caption="14 days"/><Stat label="Yield est." value="4.2" unit="t/ha" delta="-3.1%"/></div>
+<Progress label="Season" value={62} tone="structure"/>
+</Card>
+<Card variant="inverse" eyebrow="Loan AGT-2291" title="$48,000 disbursed"><Progress inverse value={18} label="Repaid" valueLabel="18%" tone="accent"/><div style={{font:'13px/1.4 var(--font-sans)',color:'var(--artemisia-200)'}}>Next instalment at harvest · Mar 2027</div></Card>
+</div>
+<div className="row"><Badge tone="positive">Verified</Badge><Badge tone="caution">Data due</Badge><Badge tone="critical">Stress detected</Badge><Badge tone="info">Under review</Badge><Badge tone="accent">Disbursed</Badge><Badge tone="neutral">Draft</Badge></div>
+<div className="row"><Tag selected icon="wheat">Wheat</Tag><Tag icon="sprout" onClick={()=>{}}>Soybean</Tag><Tag onRemove={()=>{}}>Córdoba</Tag><Tag onRemove={()=>{}}>2026/27</Tag><span style={{marginLeft:'auto'}}><Plate size={96}/></span></div>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

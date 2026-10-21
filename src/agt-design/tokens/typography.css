@@ -1,0 +1,15 @@
+:root{
+--font-display:'Shippori Mincho','Hiragino Mincho ProN','Yu Mincho',Georgia,serif;
+--font-sans:'Instrument Sans','Helvetica Neue',Helvetica,sans-serif;
+--font-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+--weight-regular:400;--weight-medium:500;--weight-semibold:600;--weight-bold:700;
+/* scale (px) */
+--size-display-xl:64px;--size-display-l:48px;--size-display-m:36px;--size-h1:28px;--size-h2:22px;--size-h3:18px;--size-body-l:17px;--size-body:15px;--size-body-s:13px;--size-caption:12px;--size-overline:11px;
+--leading-tight:1.1;--leading-snug:1.25;--leading-normal:1.5;--leading-relaxed:1.65;
+--tracking-tight:-0.02em;--tracking-normal:0;--tracking-wide:0.04em;--tracking-overline:0.14em;
+/* semantic */
+--type-display:var(--weight-medium) var(--size-display-l)/var(--leading-tight) var(--font-display);
+--type-heading:var(--weight-semibold) var(--size-h1)/var(--leading-snug) var(--font-sans);
+--type-body:var(--weight-regular) var(--size-body)/var(--leading-normal) var(--font-sans);
+--type-data:var(--weight-medium) var(--size-body)/var(--leading-snug) var(--font-mono);
+}

@@ -27,6 +27,9 @@ function CV() {
       <div className="cv-container container">
         <div className="cv-header">
           <h1 className="cv-title">Curriculum Vitae</h1>
+          <button onClick={handleOpenGoogleDrive} className="btn btn--secondary btn--m">
+            Open PDF in Google Drive
+          </button>
         </div>
         
         <div className="cv-content">
@@ -41,7 +44,7 @@ function CV() {
             <div className="cv-overlay">
               <div className="cv-overlay-content">
                 <h3>Expand CV</h3>
-                <p>Click to view fullscreen</p>
+                <p>Click to view full screen</p>
               </div>
             </div>
           </div>
@@ -57,17 +60,21 @@ function CV() {
               <div className="cv-modal-actions">
                 <button 
                   onClick={handleOpenGoogleDrive}
-                  className="cv-modal-btn cv-drive-btn"
+                  className="btn btn--primary btn--m"
                   title="Open in Google Drive"
                 >
-                  📄 Google Drive
+                  Open in Google Drive
                 </button>
                 <button 
                   onClick={handleCloseFullscreen}
-                  className="cv-modal-btn cv-close-btn"
-                  title="Close fullscreen"
+                  className="btn btn--ghost btn--m cv-close-btn"
+                  title="Close full screen"
+                  aria-label="Close full screen"
                 >
-                  ✕
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                  </svg>
                 </button>
               </div>
             </div>

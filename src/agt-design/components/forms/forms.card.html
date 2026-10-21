@@ -1,0 +1,21 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Forms" subtitle="Input, Select, Checkbox, Radio, Switch, Field" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script><style>body{background:var(--surface-page);padding:24px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:16px}.lbl{font:600 11px/1 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);width:80px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const { Input, Select, Checkbox, Radio, Switch } = window.AGTDesignSystem_48f3d6;
+function Demo(){const [t,setT]=React.useState('9');return <div className="col">
+<div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:16}}>
+<Input label="Expected yield" mono suffix="t/ha" defaultValue="4.2" hint="Last season: 3.9 t/ha"/>
+<Input label="Loan amount" prefix="$" mono defaultValue="62,000" error="Exceeds 70% of collateral"/>
+<Select label="Crop" options={['Soybean','Maize','Wheat','Sunflower']}/>
+</div>
+<div className="row" style={{gap:28}}>
+<Checkbox label="Data reflects my field" defaultChecked/><Checkbox label="Share with co-op"/>
+<Radio name="t" value="6" label="6 mo" checked={t==='6'} onChange={()=>setT('6')}/><Radio name="t" value="9" label="9 mo" checked={t==='9'} onChange={()=>setT('9')}/>
+<Switch label="Cloud mask" defaultChecked/><Switch label="Alerts"/>
+</div></div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

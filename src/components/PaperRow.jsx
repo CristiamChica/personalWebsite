@@ -13,7 +13,7 @@ function PaperRow({ index, title, meta, status, href, size = 'lg' }) {
         <span className="pr-title">{title}</span>
         {meta && <span className="pr-meta">{meta}</span>}
       </div>
-      {status && <span className="pr-status">{status}</span>}
+      {status && <span className="badge pr-status">{status}</span>}
     </a>
   )
 }

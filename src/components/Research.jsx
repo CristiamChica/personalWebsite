@@ -92,7 +92,7 @@ function Research() {
       {/* Earlier work */}
       <section className="rs-earlier">
         <div className="container">
-          <p className="rs-eyebrow">Earlier work</p>
+          <p className="overline rs-eyebrow">Earlier work</p>
           {prePhDPublications.map(pub => (
             <a key={pub.id} href={pub.url} className="rs-earlier-row" target="_blank" rel="noopener noreferrer">
               <div className="rs-earlier-content">

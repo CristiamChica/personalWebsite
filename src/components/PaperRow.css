@@ -1,92 +1,83 @@
+/* Ledger row — hairline between rows, 1px ink rule closes the list */
 .pr {
   display: flex;
   align-items: baseline;
-  gap: 16px;
-  padding: 18px 0;
-  border-top: 1px solid var(--border);
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
+  border-top: var(--rule);
   text-decoration: none;
   color: inherit;
-  transition: border-color 150ms ease;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.pr:first-child {
+  border-top: var(--rule-ink);
 }
 
 .pr:last-child {
-  border-bottom: 1px solid var(--border);
+  border-bottom: var(--rule-ink);
 }
 
 .pr:hover {
-  border-top-color: var(--border-strong);
+  color: inherit;
 }
 
 .pr:hover .pr-title {
-  color: var(--accent);
+  color: var(--text-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
 }
 
-/* Index numeral */
+/* Index numeral — display serif */
 .pr-index {
-  font-family: 'Newsreader', serif;
-  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  color: var(--text-muted);
   flex-shrink: 0;
   line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .pr-index--lg {
-  font-size: 24px;
-  font-weight: 400;
+  font-size: var(--size-h2);
   min-width: 34px;
 }
 
 .pr-index--sm {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: var(--size-h3);
   min-width: 28px;
 }
 
-/* Body */
 .pr-body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-2);
   min-width: 0;
 }
 
 .pr-title {
-  color: var(--ink);
-  line-height: 1.4;
-  transition: color 150ms ease;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  transition: color var(--duration-fast) var(--ease-standard);
 }
 
-.pr--lg .pr-title {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.pr--sm .pr-title {
-  font-size: 14px;
-  font-weight: 600;
-}
+.pr--lg .pr-title { font-size: 16px; }
+.pr--sm .pr-title { font-size: 14px; }
 
 .pr-meta {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--faint);
-  line-height: 1.3;
+  font: var(--weight-regular) var(--size-body-s)/1.4 var(--font-sans);
+  color: var(--text-muted);
 }
 
 .pr--sm .pr-meta {
-  font-size: 12px;
+  font-size: var(--size-caption);
 }
 
-/* Status pill */
 .pr-status {
-  font-family: 'Sora', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--r-pill);
-  padding: 4px 10px;
-  white-space: nowrap;
   flex-shrink: 0;
   align-self: center;
 }
@@ -94,7 +85,7 @@
 @media (max-width: 600px) {
   .pr {
     flex-wrap: wrap;
-    gap: 8px;
+    gap: var(--space-3) var(--space-4);
   }
 
   .pr-status {

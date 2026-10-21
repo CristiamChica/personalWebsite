@@ -13,53 +13,54 @@
 }
 
 .pm-col-hdr {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 600;
-  color: var(--faint);
+  color: var(--text-muted);
   text-align: center;
 }
 
 .pm-row-hdr {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 600;
-  color: var(--faint);
+  color: var(--text-muted);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
 
 .pm-payoff {
-  border: 1px solid var(--border);
-  background: var(--surface-sunk);
+  border: 1px solid var(--border-hairline);
+  background: var(--surface-sunken);
   flex-direction: column;
   gap: 3px;
 }
 
 .pm-payoff--nash {
-  border: 1.5px solid var(--accent);
-  background: var(--accent-soft);
+  border: 1.5px solid var(--sienna-500);
+  background: var(--sienna-50);
 }
 
 .pm-val {
-  font-family: 'Sora', sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-sans);
   font-size: 15px;
   font-weight: 600;
   line-height: 1;
 }
 
-.pm-val--ink  { color: var(--ink); }
-.pm-val--faint { color: var(--faint); }
+.pm-val--ink  { color: var(--text-primary); }
+.pm-val--faint { color: var(--text-muted); }
 .pm-val--nash {
   font-size: 17px;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--sienna-500);
 }
 
 .pm-nash-lbl {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 8px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: var(--accent);
+  color: var(--sienna-500);
 }

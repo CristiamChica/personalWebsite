@@ -8,12 +8,13 @@ import { trajectory } from '../data/trajectory.js'
 import CollusionChart from './diagrams/CollusionChart.jsx'
 import TwoSidedDiagram from './diagrams/TwoSidedDiagram.jsx'
 import PaperRow from './PaperRow.jsx'
+import { Plate } from '../agt-design/components/display/Plate.jsx'
 import { trackButtonClick, trackSocialClick } from '../utils/analytics'
 
 function NetworkGlyph() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-      stroke="var(--accent)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      stroke="var(--midori-600)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="5" cy="6" r="2" />
       <circle cx="19" cy="6" r="2" />
       <circle cx="12" cy="18" r="2" />
@@ -27,7 +28,7 @@ function NetworkGlyph() {
 function DocGlyph() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-      stroke="var(--accent)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      stroke="var(--midori-600)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M6 3h8l4 4v14H6z" />
       <line x1="9" y1="11" x2="15" y2="11" />
       <line x1="9" y1="14.5" x2="15" y2="14.5" />
@@ -55,7 +56,7 @@ function BrandIcon({ brand }) {
   }
   if (brand === 'linkedin') {
     return (
-      <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '17px', fontWeight: 700, color: 'white', lineHeight: 1 }}>in</span>
+      <span style={{ font: 'var(--weight-bold) 17px/1 var(--font-sans)', color: 'white' }}>in</span>
     )
   }
   return null
@@ -88,22 +89,23 @@ function Home() {
       <section className="sc-hero">
         <div className="container sc-hero-inner">
           <div className="sc-hero-left">
+            <Plate size={64} style={{ marginBottom: 'var(--space-7)' }} />
             <h1 className="sc-hero-name">Cristian Camilo Chica Castaño</h1>
             <p className="sc-hero-position">
-               PhD in Mathematics and <strong>Senior Data Scientist</strong>.
+              PhD in Mathematics and <strong>Senior Data Scientist</strong>.
             </p>
             <p className="sc-hero-intro">
               Right now I am building the regulatory and public affairs data infrastructure for Latin America at Dapper. Before that, I was a Quantitative Strategist at Morgan
               Stanley.
             </p>
             <div className="sc-hero-btns">
-              <button className="sc-btn-solid" onClick={copyEmail}>
-                {copied ? 'Copied!' : 'Get in touch'}
+              <button className="btn btn--primary" onClick={copyEmail}>
+                {copied ? 'Copied' : 'Get in touch'}
               </button>
-              <a className="sc-btn-outlined" href="https://www.linkedin.com/in/cccc24/" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('LinkedIn', 'redirect')}>LinkedIn</a>
-              <a className="sc-btn-outlined" href="https://scholar.google.com/citations?user=7uZo3mQAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('Google Scholar', 'redirect')}>Scholar</a>
-              <a className="sc-btn-outlined" href="https://github.com/CristiamChica" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('GitHub', 'redirect')}>GitHub</a>
-              <a className="sc-btn-outlined" href="https://x.com/ccchicac" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('X', 'redirect')}>X</a>
+              <a className="btn btn--secondary" href="https://www.linkedin.com/in/cccc24/" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('LinkedIn', 'redirect')}>LinkedIn</a>
+              <a className="btn btn--secondary" href="https://scholar.google.com/citations?user=7uZo3mQAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('Google Scholar', 'redirect')}>Scholar</a>
+              <a className="btn btn--secondary" href="https://github.com/CristiamChica" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('GitHub', 'redirect')}>GitHub</a>
+              <a className="btn btn--secondary" href="https://x.com/ccchicac" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('X', 'redirect')}>X</a>
             </div>
           </div>
           <div className="sc-hero-right">
@@ -117,7 +119,7 @@ function Home() {
       {/* ── Trajectory ── */}
       <section className="sc-trajectory">
         <div className="container">
-          <p className="sc-eyebrow">Trajectory</p>
+          <p className="overline sc-eyebrow">Trajectory</p>
           <div className="sc-traj-grid">
             {trajectory.map(stop => (
               <div key={stop.id} className="sc-traj-stop">
@@ -134,7 +136,7 @@ function Home() {
       {/* ── Explore ── */}
       <section className="sc-explore">
         <div className="container">
-          <p className="sc-eyebrow">Explore</p>
+          <p className="overline sc-eyebrow">Explore</p>
           <p className="sc-explore-lead">My papers and CV, plus a bit of math out in the world.</p>
 
           {/* Feature cards */}
@@ -142,24 +144,24 @@ function Home() {
             <div className="sc-card">
               <div className="sc-card-top">
                 <div className="sc-icon-badge"><NetworkGlyph /></div>
-                <Link to="/research" className="sc-card-link">View research →</Link>
+                <Link to="/research" className="link-action">View research →</Link>
               </div>
               <h3 className="sc-card-title">Research</h3>
               <p className="sc-card-body">Papers on algorithmic collusion, two-sided markets, and dynamic pricing.</p>
               <div className="sc-chips">
-                <span className="sc-chip">7 papers</span>
+                <span className="tag">7 papers</span>
               </div>
             </div>
 
             <div className="sc-card">
               <div className="sc-card-top">
                 <div className="sc-icon-badge"><DocGlyph /></div>
-                <Link to="/cv" className="sc-card-link">View CV →</Link>
+                <Link to="/cv" className="link-action">View CV →</Link>
               </div>
               <h3 className="sc-card-title">CV</h3>
               <p className="sc-card-body">Full record: education, industry roles, publications, and talks.</p>
               <div className="sc-chips">
-                <span className="sc-chip">PDF</span>
+                <span className="tag">PDF</span>
               </div>
             </div>
           </div>
@@ -172,7 +174,7 @@ function Home() {
                   <div className={`sc-brand-badge sc-brand-badge--${ch.brand}`}>
                     <BrandIcon brand={ch.brand} />
                   </div>
-                  <a href={ch.href} className="sc-card-link" target="_blank" rel="noopener noreferrer">{ch.cta}</a>
+                  <a href={ch.href} className="link-action" target="_blank" rel="noopener noreferrer">{ch.cta}</a>
                 </div>
                 <h3 className="sc-channel-title">{ch.name}</h3>
                 <p className="sc-kicker">{ch.kicker}</p>
@@ -187,8 +189,8 @@ function Home() {
       <section className="sc-selected-papers">
         <div className="container">
           <div className="sc-sp-header">
-            <p className="sc-eyebrow" style={{ marginBottom: 0 }}>Selected papers</p>
-            <Link to="/research" className="sc-sp-all-link">All research →</Link>
+            <p className="overline sc-eyebrow" style={{ marginBottom: 0 }}>Selected papers</p>
+            <Link to="/research" className="link-action">All research →</Link>
           </div>
           <div className="sc-sp-list">
             {selectedPapers.map((paper, i) => (
@@ -214,7 +216,7 @@ function Home() {
 
       {/* Toast */}
       {copied && (
-        <div className="sc-toast">✓ Copied to clipboard</div>
+        <div className="toast" role="status"><span className="toast-mark" />Email copied to clipboard</div>
       )}
     </>
   )
