@@ -57,7 +57,46 @@
   font: var(--weight-regular) var(--size-body-l)/var(--leading-relaxed) var(--font-sans);
   color: var(--text-secondary);
   max-width: 560px;
+  margin-bottom: var(--space-5);
+}
+
+/* Credentials — one line, dot-separated, wraps cleanly */
+.sc-creds {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) 0;
+  max-width: 600px;
   margin-bottom: var(--space-8);
+  font: var(--weight-medium) var(--size-body-s)/1.5 var(--font-sans);
+  color: var(--text-primary);
+}
+
+.sc-creds li:not(:last-child)::after {
+  content: '·';
+  margin: 0 var(--space-3);
+  color: var(--text-muted);
+}
+
+/* Visible email address with copy action */
+.sc-email {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.sc-email-link {
+  font: var(--weight-regular) 14px/1.3 var(--font-mono);
+  color: var(--text-secondary);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.sc-email-link:hover {
+  color: var(--text-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* Button row */
@@ -94,8 +133,8 @@
 
 .sc-traj-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-8);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-7);
   border-top: var(--rule-ink);
 }
 
@@ -119,7 +158,8 @@
 }
 
 .sc-traj-kicker--now        { color: var(--sienna-600); }
-.sc-traj-kicker--previously { color: var(--text-muted); }
+.sc-traj-kicker--previously,
+.sc-traj-kicker--hbs,
 .sc-traj-kicker--foundation { color: var(--text-muted); }
 
 .sc-traj-title {
@@ -156,10 +196,9 @@
   margin-bottom: var(--space-5);
 }
 
-.sc-channel-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
+/* Sub-heading inside a section (e.g. Projects under Explore) */
+.sc-subhead {
+  margin: var(--space-8) 0 var(--space-5);
 }
 
 /* Card shell — white, hairline, 6px, no shadow */
@@ -213,9 +252,24 @@
   background: var(--stone-25);
 }
 
-.sc-channel-card {
-  min-height: 158px;
-  padding: var(--space-6);
+/* Card without a link (e.g. private project) */
+.sc-card--static {
+  cursor: default;
+  background: var(--surface-page);
+  border-style: dashed;
+}
+
+.sc-card--static:hover {
+  border-color: var(--border-hairline);
+}
+
+.sc-card--static:active {
+  background: var(--surface-page);
+}
+
+.sc-card-note {
+  font: var(--weight-semibold) var(--size-caption)/1.3 var(--font-sans);
+  color: var(--text-muted);
 }
 
 .sc-card-top {
@@ -238,9 +292,14 @@
 }
 
 /* Channel badge — structure colour instead of third-party brand colours */
+.sc-icon-badge--muted {
+  background: var(--artemisia-50);
+  border-color: var(--artemisia-100);
+}
+
 .sc-brand-badge {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-m);
   background: var(--artemisia-800);
   display: flex;
@@ -255,6 +314,10 @@
   margin-bottom: var(--space-3);
 }
 
+.sc-card-title--sm {
+  font-size: var(--size-h3);
+}
+
 .sc-card-body {
   font: var(--weight-regular) 14px/var(--leading-normal) var(--font-sans);
   color: var(--text-secondary);
@@ -263,6 +326,7 @@
 
 .sc-chips {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: auto;
   padding-top: var(--space-5);
@@ -291,7 +355,8 @@
    SELECTED PAPERS
 ══════════════════════════════════════ */
 .sc-selected-papers {
-  padding: var(--space-10) 0 var(--space-11);
+  padding: var(--space-10) 0;
+  border-bottom: var(--rule);
 }
 
 .sc-sp-header {
@@ -302,6 +367,90 @@
 
 .sc-sp-list {
   margin-top: var(--space-6);
+}
+
+/* ══════════════════════════════════════
+   ADVISING & COLLABORATIONS
+══════════════════════════════════════ */
+.sc-advising {
+  padding: var(--space-10) 0;
+  border-bottom: var(--rule);
+}
+
+/* Tint card — calm callout, not a sales banner */
+.sc-advising-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5) var(--space-9);
+  padding: var(--space-8);
+  background: var(--surface-tint);
+  border: 1px solid var(--byakuroku-200);
+  border-radius: var(--radius-l);
+}
+
+.sc-advising-text .sc-eyebrow {
+  margin-bottom: var(--space-4);
+}
+
+.sc-advising-title {
+  font: var(--weight-medium) var(--size-h1)/var(--leading-snug) var(--font-display);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.sc-advising-lead {
+  font: var(--weight-regular) var(--size-body)/var(--leading-normal) var(--font-sans);
+  color: var(--text-secondary);
+}
+
+.sc-advising-list {
+  list-style: none;
+  align-self: center;
+  border-top: var(--rule-ink);
+}
+
+.sc-advising-list li {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--byakuroku-200);
+  font: var(--weight-medium) var(--size-body)/var(--leading-snug) var(--font-sans);
+  color: var(--text-primary);
+}
+
+.sc-advising-cta {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+/* ══════════════════════════════════════
+   OUTREACH — small row
+══════════════════════════════════════ */
+.sc-outreach {
+  padding: var(--space-10) 0 var(--space-11);
+}
+
+.sc-outreach-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.sc-outreach-card {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-6);
+}
+
+.sc-outreach-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.sc-outreach-card .sc-kicker {
+  margin-bottom: var(--space-2);
 }
 
 /* ══════════════════════════════════════
@@ -348,7 +497,8 @@
   }
 
   .sc-feature-row,
-  .sc-channel-row {
+  .sc-outreach-row,
+  .sc-advising-card {
     grid-template-columns: 1fr;
   }
 }
@@ -368,20 +518,29 @@
 
   .sc-trajectory,
   .sc-explore,
-  .sc-selected-papers {
+  .sc-selected-papers,
+  .sc-advising {
     padding: var(--space-8) 0;
   }
 
-  .sc-channel-row {
-    grid-template-columns: 1fr 1fr;
+  .sc-outreach {
+    padding: var(--space-8) 0 var(--space-10);
+  }
+
+  .sc-advising-card {
+    padding: var(--space-6);
+  }
+
+  .sc-creds {
+    flex-direction: column;
+  }
+
+  .sc-creds li:not(:last-child)::after {
+    content: none;
   }
 }
 
 @media (max-width: 420px) {
-  .sc-channel-row {
-    grid-template-columns: 1fr;
-  }
-
   .sc-hero-btns {
     display: grid;
     grid-template-columns: 1fr 1fr;

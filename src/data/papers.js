@@ -96,9 +96,11 @@ export const prePhDPublications = [
   {
     id: 3,
     title: "Some Aspects of the Obstacle Problem",
-    university: "Universidad Nacional de Colombia Sede Medellín",
+    type: "thesis",
+    authors: "Cristian Chica",
+    journal: "MSc thesis, Universidad Nacional de Colombia, Sede Medellín",
     year: "2020",
-    authors: "Advisor: Carlos Augusto Vélez López, Co-Advisor: Luis Felipe Duque Álvarez",
+    advisors: "Carlos Augusto Vélez López, Luis Felipe Duque Álvarez",
     url: "https://repositorio.unal.edu.co/bitstream/handle/unal/78158/1020469622.2020.pdf?sequence=4&isAllowed=y"
   }
 ];

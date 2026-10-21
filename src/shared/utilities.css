@@ -88,6 +88,12 @@
 .btn--ghost:hover  { background: var(--stone-100); color: var(--text-primary); }
 .btn--ghost:active { background: var(--stone-200); }
 
+.btn--icon {
+  width: var(--control-h-m);
+  padding: 0;
+  color: var(--text-secondary);
+}
+
 .btn:disabled {
   opacity: .4;
   cursor: not-allowed;

@@ -1,25 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { EMAIL } from '../seo'
+import { trackButtonClick } from '../utils/analytics'
 import './Header.css'
 
 function Header() {
   const location = useLocation()
-  const [copied, setCopied] = useState(false)
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText('cristiam.chica@gmail.com')
-    } catch {
-      const ta = document.createElement('textarea')
-      ta.value = 'cristiam.chica@gmail.com'
-      document.body.appendChild(ta)
-      ta.select()
-      document.execCommand('copy')
-      document.body.removeChild(ta)
-    }
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
 
   return (
     <header className="hdr">
@@ -35,9 +21,13 @@ function Header() {
           <Link to="/cv" className={`hdr-link${location.pathname === '/cv' ? ' hdr-link--active' : ''}`}>
             CV
           </Link>
-          <button className="btn btn--primary btn--m hdr-contact" onClick={copyEmail}>
-            {copied ? 'Copied' : 'Contact'}
-          </button>
+          <a
+            href={`mailto:${EMAIL}`}
+            className="btn btn--primary btn--m hdr-contact"
+            onClick={() => trackButtonClick('Email Link', 'Header')}
+          >
+            Contact
+          </a>
         </nav>
       </div>
     </header>

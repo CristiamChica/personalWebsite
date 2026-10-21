@@ -92,5 +92,14 @@
 
   .hdr-contact {
     min-width: 0;
+    padding: 0 var(--space-4);
+    font-size: var(--size-body-s);
+  }
+}
+
+/* Narrow phones: the name already links home */
+@media (max-width: 400px) {
+  .hdr-link[href="/"] {
+    display: none;
   }
 }

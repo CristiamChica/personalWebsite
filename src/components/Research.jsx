@@ -97,7 +97,11 @@ function Research() {
             <a key={pub.id} href={pub.url} className="rs-earlier-row" target="_blank" rel="noopener noreferrer">
               <div className="rs-earlier-content">
                 <span className="rs-earlier-title">{pub.title}</span>
-                <span className="rs-earlier-meta">{pub.authors} · {pub.year} · {pub.journal}</span>
+                <span className="rs-earlier-meta">
+                  {pub.type === 'thesis'
+                    ? `${pub.authors} · ${pub.journal} · ${pub.year} · Advisors: ${pub.advisors}`
+                    : `${pub.authors} · ${pub.year} · ${pub.journal}`}
+                </span>
               </div>
             </a>
           ))}

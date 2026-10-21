@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Plate No. 293 device from the AGT design system -->
+  <rect width="32" height="32" rx="6" fill="#F2F5F5"/>
+  <rect x="10" y="5" width="12" height="7.5" fill="#C2521A"/>
+  <rect x="4" y="12.5" width="12" height="7.5" fill="#A9CBC5"/>
+  <rect x="16" y="12.5" width="12" height="7.5" fill="#5F7F84"/>
+  <rect x="10" y="20" width="12" height="7.5" fill="#2E7A45"/>
+</svg>
