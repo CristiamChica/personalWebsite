@@ -173,8 +173,44 @@
   transition: border-color var(--duration-fast) var(--ease-standard);
 }
 
+/* Whole card is clickable: the card's link stretches over it */
+.sc-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.sc-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-l);
+}
+
+.sc-card-link:focus-visible {
+  box-shadow: none;
+}
+
+.sc-card:has(.sc-card-link:focus-visible) {
+  box-shadow: var(--focus-ring);
+}
+
 .sc-card:hover {
   border-color: var(--border-strong);
+}
+
+.sc-card:hover .sc-card-link {
+  color: var(--midori-700);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sc-card:hover .sc-card-title,
+.sc-card:hover .sc-channel-title {
+  color: var(--text-link);
+}
+
+.sc-card:active {
+  background: var(--stone-25);
 }
 
 .sc-channel-card {

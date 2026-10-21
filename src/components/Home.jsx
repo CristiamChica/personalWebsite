@@ -144,7 +144,7 @@ function Home() {
             <div className="sc-card">
               <div className="sc-card-top">
                 <div className="sc-icon-badge"><NetworkGlyph /></div>
-                <Link to="/research" className="link-action">View research →</Link>
+                <Link to="/research" className="link-action sc-card-link">View research →</Link>
               </div>
               <h3 className="sc-card-title">Research</h3>
               <p className="sc-card-body">Papers on algorithmic collusion, two-sided markets, and dynamic pricing.</p>
@@ -156,7 +156,7 @@ function Home() {
             <div className="sc-card">
               <div className="sc-card-top">
                 <div className="sc-icon-badge"><DocGlyph /></div>
-                <Link to="/cv" className="link-action">View CV →</Link>
+                <Link to="/cv" className="link-action sc-card-link">View CV →</Link>
               </div>
               <h3 className="sc-card-title">CV</h3>
               <p className="sc-card-body">Full record: education, industry roles, publications, and talks.</p>
@@ -174,7 +174,7 @@ function Home() {
                   <div className={`sc-brand-badge sc-brand-badge--${ch.brand}`}>
                     <BrandIcon brand={ch.brand} />
                   </div>
-                  <a href={ch.href} className="link-action" target="_blank" rel="noopener noreferrer">{ch.cta}</a>
+                  <a href={ch.href} className="link-action sc-card-link" target="_blank" rel="noopener noreferrer" aria-label={`${ch.cta.replace(' →', '')} on ${ch.name}`}>{ch.cta}</a>
                 </div>
                 <h3 className="sc-channel-title">{ch.name}</h3>
                 <p className="sc-kicker">{ch.kicker}</p>
