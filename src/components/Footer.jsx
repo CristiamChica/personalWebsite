@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { EMAIL } from '../seo'
+import EmailLink from './EmailLink'
 import './Footer.css'
 
 function Footer() {
@@ -12,7 +12,7 @@ function Footer() {
         <div className="footer-text">
           <p suppressHydrationWarning>© {currentYear} Cristian Camilo Chica Castaño. All rights reserved.</p>
           <p>
-            <a href={`mailto:${EMAIL}`} className="footer-link footer-email">{EMAIL}</a>
+            <EmailLink source="Footer" className="footer-link footer-email" />
           </p>
           <p className="footer-privacy">
             This site uses Google Analytics for anonymous usage statistics.{' '}

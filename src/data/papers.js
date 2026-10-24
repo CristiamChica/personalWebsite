@@ -106,24 +106,24 @@ export const prePhDPublications = [
 ];
 
 // Papers crediting Cristian as a research assistant in the acknowledgments
-// (Jorge Tamayo and coauthors, HBS 2018–2021). Ordered: published → accepted → R&R → working papers.
+// (Jorge Tamayo and coauthors, HBS 2018–2021). Display order is curated (most relevant first).
 // `year` is the publication year, or the year of the latest version checked.
 export const researchAssistance = [
   {
     id: 1,
-    title: "Formal Employment and Organized Crime: Regression Discontinuity Evidence from Colombia",
-    authors: "Gaurav Khanna, Carlos Medina, Anant Nyshadham, Jorge Tamayo, Nicolás Torres",
-    venue: "The Economic Journal 133, 2427–2448",
-    year: "2023",
-    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=uead025.pdf"
+    title: "Competitive Two-Part Tariffs",
+    authors: "Jorge Tamayo, Guofu Tan",
+    venue: "Working paper, HBS WP 21-089",
+    year: "2025",
+    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=21-089.pdf"
   },
   {
     id: 2,
-    title: "Helping Children Catch Up: Early Life Shocks and the PROGRESA Experiment",
-    authors: "Achyuta Adhvaryu, Teresa Molina, Anant Nyshadham, Jorge Tamayo",
-    venue: "The Economic Journal 134(657)",
-    year: "2024",
-    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=uead067.pdf"
+    title: "Spatial Mobility, Economic Opportunity, and Crime",
+    authors: "Gaurav Khanna, Carlos Medina, Anant Nyshadham, Daniel Ramos-Menchelli, Jorge Tamayo, Audrey Tiew",
+    venue: "R&R, American Economic Review",
+    year: "2023",
+    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=24-016.pdf"
   },
   {
     id: 3,
@@ -135,6 +135,22 @@ export const researchAssistance = [
   },
   {
     id: 4,
+    title: "Helping Children Catch Up: Early Life Shocks and the PROGRESA Experiment",
+    authors: "Achyuta Adhvaryu, Teresa Molina, Anant Nyshadham, Jorge Tamayo",
+    venue: "The Economic Journal 134(657)",
+    year: "2024",
+    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=uead067.pdf"
+  },
+  {
+    id: 5,
+    title: "Formal Employment and Organized Crime: Regression Discontinuity Evidence from Colombia",
+    authors: "Gaurav Khanna, Carlos Medina, Anant Nyshadham, Jorge Tamayo, Nicolás Torres",
+    venue: "The Economic Journal 133, 2427–2448",
+    year: "2023",
+    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=uead025.pdf"
+  },
+  {
+    id: 6,
     title: "An Anatomy of Performance Monitoring",
     authors: "Achyuta Adhvaryu, Anant Nyshadham, Jorge Tamayo",
     venue: "Accepted, Journal of Political Economy",
@@ -142,28 +158,12 @@ export const researchAssistance = [
     url: "https://www.hbs.edu/ris/Publication%20Files/22-066_3c5abc63-bac0-4c34-b53b-3bda4d14e75e.pdf"
   },
   {
-    id: 5,
-    title: "Spatial Mobility, Economic Opportunity, and Crime",
-    authors: "Gaurav Khanna, Carlos Medina, Anant Nyshadham, Daniel Ramos-Menchelli, Jorge Tamayo, Audrey Tiew",
-    venue: "R&R, American Economic Review",
-    year: "2023",
-    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=24-016.pdf"
-  },
-  {
-    id: 6,
+    id: 7,
     title: "Diagnosing Quality: Learning, Amenities, and the Demand for Health Care",
     authors: "Achyuta Adhvaryu, Emilio Gutierrez, Anant Nyshadham, Jorge Tamayo",
     venue: "Working paper, HBS WP 21-110",
     year: "2021",
     url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=WP21-110v2.pdf"
-  },
-  {
-    id: 7,
-    title: "Competitive Two-Part Tariffs",
-    authors: "Jorge Tamayo, Guofu Tan",
-    venue: "Working paper, HBS WP 21-089",
-    year: "2025",
-    url: "https://www.hbs.edu/faculty/Pages/download.aspx?name=21-089.pdf"
   },
   {
     id: 8,

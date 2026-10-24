@@ -8,11 +8,11 @@ import { papers, prePhDPublications } from '../data/papers.js'
 import { channels } from '../data/channels.js'
 import { trajectory } from '../data/trajectory.js'
 import { projects } from '../data/projects.js'
-import { EMAIL } from '../seo'
 import PaperRow from './PaperRow.jsx'
 import CopyEmailButton from './CopyEmailButton.jsx'
+import EmailLink from './EmailLink.jsx'
 import { Plate } from '../agt-design/components/display/Plate.jsx'
-import { trackButtonClick, trackSocialClick } from '../utils/analytics'
+import { trackSocialClick } from '../utils/analytics'
 
 const PUBLICATION_COUNT = papers.length + prePhDPublications.filter(p => p.type !== 'thesis').length
 
@@ -101,27 +101,22 @@ function Home() {
             <Plate size={64} style={{ marginBottom: 'var(--space-7)' }} />
             <h1 className="sc-hero-name">Cristian Camilo Chica Castaño</h1>
             <p className="sc-hero-position">
-              Mathematician working where <strong>game theory meets machine learning</strong>.
+              PhD in Mathematics and <strong>Head of Data at Dapper</strong>.
             </p>
             <p className="sc-hero-intro">
               I lead a 9-person data and AI engineering team at Dapper, building regulatory-intelligence
-              infrastructure across 10+ markets in Latin America and the Middle East. My research studies
-              how learning algorithms end up colluding on prices.
+              infrastructure across 10+ markets in Latin America and the Middle East. My research touches
+              multiple fields: algorithmic pricing, reinforcement learning and two-sided markets.
             </p>
-            <ul className="sc-creds">
-              <li>PhD Mathematics, University of Minnesota</li>
-              <li>Previously Quantitative Strategist, Morgan Stanley</li>
-              <li>Research Assistant, Harvard Business School</li>
-            </ul>
             <div className="sc-hero-btns">
-              <a className="btn btn--primary" href={`mailto:${EMAIL}`} onClick={() => trackButtonClick('Email Link', 'Home')}>Email me</a>
+              <EmailLink source="Home" className="btn btn--primary">Email me</EmailLink>
               <a className="btn btn--secondary" href="https://www.linkedin.com/in/cccc24/" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('LinkedIn', 'redirect')}>LinkedIn</a>
               <a className="btn btn--secondary" href="https://scholar.google.com/citations?user=7uZo3mQAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('Google Scholar', 'redirect')}>Scholar</a>
               <a className="btn btn--secondary" href="https://github.com/CristiamChica" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('GitHub', 'redirect')}>GitHub</a>
               <a className="btn btn--secondary" href="https://x.com/ccchicac" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('X', 'redirect')}>X</a>
             </div>
             <div className="sc-email">
-              <a href={`mailto:${EMAIL}`} className="sc-email-link" onClick={() => trackButtonClick('Email Link', 'Home')}>{EMAIL}</a>
+              <EmailLink source="Home" className="sc-email-link" />
               <CopyEmailButton source="Home" />
             </div>
           </div>
@@ -245,8 +240,8 @@ function Home() {
               {ADVISING_TOPICS.map(topic => <li key={topic}>{topic}</li>)}
             </ul>
             <div className="sc-advising-cta">
-              <a href={`mailto:${EMAIL}`} className="btn btn--primary btn--m" onClick={() => trackButtonClick('Email Link', 'Advising')}>Email me</a>
-              <a href={`mailto:${EMAIL}`} className="sc-email-link" onClick={() => trackButtonClick('Email Link', 'Advising')}>{EMAIL}</a>
+              <EmailLink source="Advising" className="btn btn--primary btn--m">Email me</EmailLink>
+              <EmailLink source="Advising" className="sc-email-link" />
             </div>
           </div>
         </div>

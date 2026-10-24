@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { EMAIL } from '../seo'
+import { emailAddress } from '../seo'
 import { trackButtonClick } from '../utils/analytics'
 
 async function copyText(text) {
@@ -23,7 +23,7 @@ function CopyEmailButton({ source, className = '' }) {
   useEffect(() => () => clearTimeout(timer.current), [])
 
   const handleClick = async () => {
-    await copyText(EMAIL)
+    await copyText(emailAddress())
     setCopied(true)
     clearTimeout(timer.current)
     timer.current = setTimeout(() => setCopied(false), 2200)
@@ -51,7 +51,7 @@ function CopyEmailButton({ source, className = '' }) {
         )}
       </button>
       {copied && (
-        <div className="toast" role="status"><span className="toast-mark" />Email copied: {EMAIL}</div>
+        <div className="toast" role="status"><span className="toast-mark" />Email address copied to clipboard</div>
       )}
     </>
   )

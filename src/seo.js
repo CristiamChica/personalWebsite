@@ -2,13 +2,15 @@
 export const SITE_URL = 'https://www.cristianchica.com';
 export const SITE_NAME = 'Cristian Chica';
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
-export const EMAIL = 'cristiam.chica@gmail.com';
+// The address is only assembled in the browser so it never appears as plain text in the HTML
+export const EMAIL_DISPLAY = 'cristiam.chica at gmail dot com';
+export const emailAddress = () => ['cristiam.chica', 'gmail.com'].join('@');
 
 export const ROUTES = {
   '/': {
     label: 'Home',
-    title: 'Cristian Chica | Game theory, machine learning and data',
-    description: 'Cristian Chica is a mathematician (PhD, University of Minnesota) working where game theory meets machine learning. He leads data and AI engineering at Dapper and studies how learning algorithms end up colluding on prices.'
+    title: 'Cristian Chica | Mathematician and Head of Data at Dapper',
+    description: 'Cristian Chica has a PhD in Mathematics from the University of Minnesota and is Head of Data at Dapper. His research spans algorithmic pricing, reinforcement learning and two-sided markets.'
   },
   '/research': {
     label: 'Research',
@@ -18,7 +20,7 @@ export const ROUTES = {
   '/cv': {
     label: 'CV',
     title: 'CV | Cristian Chica',
-    description: 'Curriculum vitae of Cristian Chica: data and AI engineering at Dapper, Quantitative Strategist at Morgan Stanley, Research Assistant at Harvard Business School, PhD in Mathematics from the University of Minnesota.'
+    description: 'Curriculum vitae of Cristian Chica: Head of Data at Dapper, Quantitative Strategist at Morgan Stanley, Research Assistant at Harvard Business School, PhD in Mathematics from the University of Minnesota.'
   },
   '/privacy': {
     label: 'Privacy Policy',
@@ -41,12 +43,12 @@ export const PERSON_JSON_LD = {
   alternateName: 'Cristian Chica',
   url: SITE_URL,
   image: `${SITE_URL}/og-image.png`,
-  email: `mailto:${EMAIL}`,
-  jobTitle: 'Senior Data Scientist',
+  jobTitle: 'Head of Data',
   worksFor: { '@type': 'Organization', name: 'Dapper' },
   alumniOf: [
     { '@type': 'CollegeOrUniversity', name: 'University of Minnesota' },
-    { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional de Colombia' }
+    { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional de Colombia' },
+    { '@type': 'CollegeOrUniversity', name: 'Universidad EAFIT' }
   ],
   knowsAbout: ['Game theory', 'Machine learning', 'Algorithmic collusion', 'Two-sided markets', 'Industrial organization'],
   sameAs: SAME_AS

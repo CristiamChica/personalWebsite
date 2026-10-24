@@ -11,14 +11,21 @@ const CV_PDF = '/cv.pdf'
 const EXPERIENCE = [
   {
     org: 'Dapper',
-    role: 'Data and AI engineering',
+    role: 'Head of Data',
     body: 'Leading a 9-person team building RAG, agentic ETL and data-quality systems for regulatory data in 10+ markets across Latin America and the Middle East.',
-    when: 'Now'
+    when: '2026–now'
   },
   {
     org: 'Morgan Stanley',
-    role: 'Quantitative Strategist',
-    body: 'Entity resolution, LLM-driven automation and firm strategy.'
+    role: 'Quantitative Strategist (NYC)',
+    body: 'Entity resolution, LLM-driven automation and firm strategy.',
+    when: '2024–2026'
+  },
+  {
+    org: 'University of Minnesota',
+    role: 'Research and Teaching Assistant',
+    body: 'Research and teaching assistant during the PhD in Mathematics.',
+    when: '2021–2024'
   },
   {
     org: 'Harvard Business School',
@@ -29,8 +36,19 @@ const EXPERIENCE = [
 ]
 
 const EDUCATION = [
-  { degree: 'PhD, Mathematics', school: 'University of Minnesota', body: 'Multi-agent reinforcement learning and algorithmic collusion.' },
-  { degree: 'MSc, Mathematics', school: 'Universidad Nacional de Colombia, Sede Medellín', body: 'Thesis: Some Aspects of the Obstacle Problem.', when: '2020' }
+  { degree: 'PhD, Mathematics', school: 'University of Minnesota', body: 'Multi-agent reinforcement learning and algorithmic collusion.', when: '2025' },
+  { degree: 'MSc, Mathematics', school: 'Universidad Nacional de Colombia, Sede Medellín', body: 'Thesis: Some Aspects of the Obstacle Problem.', when: '2020' },
+  { degree: 'MSc, Economics', school: 'Universidad EAFIT', when: '2018' },
+  { degree: 'BSc, Mathematics & BA, Economics', school: 'Universidad Nacional de Colombia, Sede Medellín', when: '2018' }
+]
+
+const TALKS = [
+  {
+    title: 'NonLinearities of a Ph.D.',
+    venue: 'Industrial Problems Seminar, Institute for Mathematics and its Applications, University of Minnesota',
+    body: 'From a mathematics PhD into industry: the PhD, finance, a startup and AI, closing with two open problems from the PhD work.',
+    when: 'Sep 2026'
+  }
 ]
 
 function CV() {
@@ -45,7 +63,7 @@ function CV() {
         <div className="cv-header">
           <div>
             <h1 className="cv-title">Curriculum Vitae</h1>
-            <p className="cv-lead">A short summary. The PDF has the full record, including talks.</p>
+            <p className="cv-lead">Short summary.</p>
           </div>
           <div className="cv-actions">
             <a href={CV_PDF} download="Cristian_Chica_CV.pdf" className="btn btn--primary btn--m" onClick={handleDownload}>
@@ -83,6 +101,22 @@ function CV() {
                   {item.when && <span className="cv-item-when">{item.when}</span>}
                 </div>
                 <span className="cv-item-sub">{item.school}</span>
+                {item.body && <p className="cv-item-body">{item.body}</p>}
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="cv-block">
+          <h2 className="overline cv-block-title">Talks</h2>
+          <ol className="cv-list">
+            {TALKS.map(item => (
+              <li key={item.title} className="cv-item">
+                <div className="cv-item-head">
+                  <span className="cv-item-title">{item.title}</span>
+                  <span className="cv-item-when">{item.when}</span>
+                </div>
+                <span className="cv-item-sub">{item.venue}</span>
                 <p className="cv-item-body">{item.body}</p>
               </li>
             ))}

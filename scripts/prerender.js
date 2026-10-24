@@ -34,7 +34,7 @@ function head(pathname, meta) {
     `<meta property="og:image" content="${OG_IMAGE}" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
-    `<meta property="og:image:alt" content="Cristian Chica — mathematician working where game theory meets machine learning" />`,
+    `<meta property="og:image:alt" content="Cristian Chica — PhD in Mathematics and Head of Data at Dapper" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:site" content="@ccchicac" />`,
     `<meta name="twitter:title" content="${esc(meta.title)}" />`,

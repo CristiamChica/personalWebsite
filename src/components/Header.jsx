@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { EMAIL } from '../seo'
-import { trackButtonClick } from '../utils/analytics'
+import EmailLink from './EmailLink'
 import './Header.css'
 
 function Header() {
@@ -21,13 +20,9 @@ function Header() {
           <Link to="/cv" className={`hdr-link${location.pathname === '/cv' ? ' hdr-link--active' : ''}`}>
             CV
           </Link>
-          <a
-            href={`mailto:${EMAIL}`}
-            className="btn btn--primary btn--m hdr-contact"
-            onClick={() => trackButtonClick('Email Link', 'Header')}
-          >
+          <EmailLink source="Header" className="btn btn--primary btn--m hdr-contact">
             Contact
-          </a>
+          </EmailLink>
         </nav>
       </div>
     </header>

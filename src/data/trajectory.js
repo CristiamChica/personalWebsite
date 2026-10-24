@@ -4,27 +4,27 @@ export const trajectory = [
     kicker: 'Now',
     dotStyle: 'accent',
     title: 'Dapper',
-    body: 'Leading a 9-person team building RAG, agentic ETL and data-quality systems for regulatory data in 10+ markets.'
+    body: 'Senior Data Scientist to Head of Data.'
   },
   {
     id: 'previously',
     kicker: 'Previously',
     dotStyle: 'ink',
     title: 'Morgan Stanley',
-    body: 'Quantitative Strategist: entity resolution, LLM-driven automation, firm strategy.'
-  },
-  {
-    id: 'hbs',
-    kicker: 'Research assistant',
-    dotStyle: 'ink',
-    title: 'Harvard Business School',
-    body: 'Research Assistant (2018–2021) to Jorge Tamayo and coauthors.'
+    body: 'Quantitative Strategist (NYC).'
   },
   {
     id: 'foundation',
     kicker: 'Foundation',
-    dotStyle: 'ring',
+    dotStyle: 'ink',
     title: 'PhD, Mathematics, University of Minnesota',
     body: 'Multi-agent reinforcement learning & algorithmic collusion.'
+  },
+  {
+    id: 'hbs',
+    kicker: 'Research assistant',
+    dotStyle: 'ring',
+    title: 'Harvard Business School',
+    body: 'Research Assistant (2018–2021) to Jorge Tamayo and coauthors.'
   }
 ];

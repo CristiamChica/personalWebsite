@@ -89,10 +89,10 @@ function Research() {
         </section>
       ))}
 
-      {/* Earlier work */}
+      {/* Work before the PhD */}
       <section className="rs-earlier">
         <div className="container">
-          <p className="overline rs-eyebrow">Earlier work</p>
+          <p className="overline rs-eyebrow">Work before the PhD</p>
           {prePhDPublications.map(pub => (
             <a key={pub.id} href={pub.url} className="rs-earlier-row" target="_blank" rel="noopener noreferrer">
               <div className="rs-earlier-content">
@@ -113,10 +113,11 @@ function Research() {
         <div className="container">
           <h4 className="overline rs-eyebrow">Research assistance</h4>
           <p className="rs-assist-intro">
-            As a research assistant at Harvard Business School (2018–2021), I contributed to the following projects with Jorge Tamayo and coauthors (credited in the acknowledgments).
+            As a research assistant at Harvard Business School (2018–2021), I contributed to these projects with Jorge Tamayo and coauthors (credited in the acknowledgments).
           </p>
-          {researchAssistance.map(pub => (
+          {researchAssistance.map((pub, i) => (
             <a key={pub.id} href={pub.url} className="rs-earlier-row" target="_blank" rel="noopener noreferrer">
+              <span className="rs-assist-index">{String(i + 1).padStart(2, '0')}</span>
               <div className="rs-earlier-content">
                 <span className="rs-earlier-title">{pub.title}</span>
                 <span className="rs-earlier-meta">{pub.authors} · <em>{pub.venue}</em> · {pub.year}</span>

@@ -85,7 +85,7 @@
   margin-top: var(--space-2);
 }
 
-/* ── Earlier work — ledger rows ── */
+/* ── Work before the PhD — ledger rows ── */
 .rs-earlier {
   padding: var(--space-10) 0 var(--space-11);
 }
@@ -141,15 +141,25 @@
 }
 
 .rs-assist-intro {
-  font: var(--weight-regular) var(--size-body-s)/var(--leading-normal) var(--font-sans);
+  font: var(--weight-regular) var(--size-caption)/var(--leading-normal) var(--font-sans);
   color: var(--text-muted);
-  max-width: 620px;
   margin-top: calc(-1 * var(--space-3));
   margin-bottom: var(--space-6);
 }
 
 .rs-assist .rs-earlier-row {
+  align-items: baseline;
+  gap: var(--space-5);
   padding: var(--space-4) 0;
+}
+
+/* Orange numerals, as in the paper lists above, one size down */
+.rs-assist-index {
+  font: var(--weight-medium) var(--size-h3)/1 var(--font-display);
+  color: var(--sienna-500);
+  font-variant-numeric: lining-nums tabular-nums;
+  min-width: 28px;
+  flex-shrink: 0;
 }
 
 .rs-assist .rs-earlier-title {
