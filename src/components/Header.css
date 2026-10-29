@@ -98,8 +98,53 @@
 }
 
 /* Narrow phones: the name already links home */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .hdr-link[href="/"] {
     display: none;
+  }
+}
+
+/* Four nav items at 360px: tighten the wordmark and gaps so Contact stays on screen */
+@media (max-width: 400px) {
+  .hdr-inner {
+    gap: var(--space-3);
+  }
+
+  .hdr-logo {
+    font-size: 15px;
+    letter-spacing: 0.02em;
+  }
+
+  .hdr-nav {
+    gap: var(--space-3);
+  }
+
+  .hdr-contact {
+    padding: 0 var(--space-3);
+  }
+}
+
+@media (max-width: 350px) {
+  .hdr .hdr-inner {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .hdr-logo {
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  .hdr-nav {
+    gap: 6px;
+  }
+
+  .hdr-link,
+  .hdr-nav .hdr-contact {
+    font-size: var(--size-caption);
+  }
+
+  .hdr-nav .hdr-contact {
+    padding: 0 var(--space-2);
   }
 }

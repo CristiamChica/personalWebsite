@@ -17,6 +17,9 @@ function Header() {
           <Link to="/research" className={`hdr-link${location.pathname === '/research' ? ' hdr-link--active' : ''}`}>
             Research
           </Link>
+          <Link to="/writing" className={`hdr-link${location.pathname.startsWith('/writing') ? ' hdr-link--active' : ''}`}>
+            Writing
+          </Link>
           <Link to="/cv" className={`hdr-link${location.pathname === '/cv' ? ' hdr-link--active' : ''}`}>
             CV
           </Link>

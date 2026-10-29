@@ -5,6 +5,8 @@ import Home from './components/Home'
 import Research from './components/Research'
 import CV from './components/CV'
 import Privacy from './components/Privacy'
+import Writing from './components/writing/Writing'
+import OpenAIMathRelease from './components/writing/OpenAIMathRelease'
 import Footer from './components/Footer'
 import CookieConsent from './components/CookieConsent'
 import { trackPageView } from './utils/analytics'
@@ -37,6 +39,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/research" element={<Research />} />
           <Route path="/cv" element={<CV />} />
+          <Route path="/writing" element={<Writing />} />
+          <Route path="/writing/openai-math-release" element={<OpenAIMathRelease />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </main>

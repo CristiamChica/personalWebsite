@@ -1,4 +1,6 @@
 // Per-route metadata. Used by the client (document.title) and by scripts/prerender.js (static <head>).
+import { posts, postPath } from './data/posts.js'
+
 export const SITE_URL = 'https://www.cristianchica.com';
 export const SITE_NAME = 'Cristian Chica';
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
@@ -22,6 +24,18 @@ export const ROUTES = {
     title: 'CV | Cristian Chica',
     description: 'Curriculum vitae of Cristian Chica: Head of Data at Dapper, Quantitative Strategist at Morgan Stanley, Research Assistant at Harvard Business School, PhD in Mathematics from the University of Minnesota.'
   },
+  '/writing': {
+    label: 'Writing',
+    title: 'Writing | Cristian Chica',
+    description: 'Essays and analyses by Cristian Chica on mathematics, machine learning and data.'
+  },
+  ...Object.fromEntries(posts.map(post => [postPath(post), {
+    label: post.shortTitle,
+    title: `${post.title} | Cristian Chica`,
+    description: post.description,
+    // prerender.js emits og:type=article and BlogPosting JSON-LD for these
+    article: { headline: post.title, datePublished: post.published }
+  }])),
   '/privacy': {
     label: 'Privacy Policy',
     title: 'Privacy Policy | Cristian Chica',

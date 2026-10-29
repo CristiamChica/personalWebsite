@@ -20,13 +20,30 @@ const esc = s => String(s)
   .replace(/&/g, '&amp;').replace(/"/g, '&quot;')
   .replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
+function jsonLd(url, meta) {
+  if (!meta.article) return PERSON_JSON_LD
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: meta.article.headline,
+    description: meta.description,
+    datePublished: meta.article.datePublished,
+    url,
+    mainEntityOfPage: url,
+    image: OG_IMAGE,
+    author: { '@type': 'Person', name: PERSON_JSON_LD.name, url: SITE_URL }
+  }
+}
+
 function head(pathname, meta) {
   const url = SITE_URL + (pathname === '/' ? '/' : pathname)
+  const ogType = meta.article ? 'article' : pathname === '/' ? 'profile' : 'website'
   return [
     `<title>${esc(meta.title)}</title>`,
     `<meta name="description" content="${esc(meta.description)}" />`,
     `<link rel="canonical" href="${url}" />`,
-    `<meta property="og:type" content="${pathname === '/' ? 'profile' : 'website'}" />`,
+    `<meta property="og:type" content="${ogType}" />`,
+    ...(meta.article ? [`<meta property="article:published_time" content="${meta.article.datePublished}" />`] : []),
     `<meta property="og:site_name" content="${esc(SITE_NAME)}" />`,
     `<meta property="og:title" content="${esc(meta.title)}" />`,
     `<meta property="og:description" content="${esc(meta.description)}" />`,
@@ -40,7 +57,7 @@ function head(pathname, meta) {
     `<meta name="twitter:title" content="${esc(meta.title)}" />`,
     `<meta name="twitter:description" content="${esc(meta.description)}" />`,
     `<meta name="twitter:image" content="${OG_IMAGE}" />`,
-    `<script type="application/ld+json">${JSON.stringify(PERSON_JSON_LD).replace(/</g, '\\u003c')}</script>`
+    `<script type="application/ld+json">${JSON.stringify(jsonLd(url, meta)).replace(/</g, '\\u003c')}</script>`
   ].join('\n    ')
 }
 
@@ -50,10 +67,11 @@ for (const [pathname, meta] of Object.entries(ROUTES)) {
     .replace('<!--app-head-->', head(pathname, meta))
     .replace('<!--app-html-->', render(pathname))
 
-  // /research -> research.html; served at /research via `cleanUrls` in vercel.json (and by vite preview)
+  // /research -> research.html, /writing/x -> writing/x.html; served without .html via `cleanUrls` in vercel.json
   const outFile = pathname === '/'
     ? path.join(dist, 'index.html')
     : path.join(dist, `${pathname.slice(1)}.html`)
+  fs.mkdirSync(path.dirname(outFile), { recursive: true })
   fs.writeFileSync(outFile, html)
   console.log(`prerendered ${pathname} -> ${path.relative(root, outFile)}`)
 }
