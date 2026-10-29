@@ -7,6 +7,8 @@
 
 :root {
   /* site-level aliases on top of AGT semantics */
+  /* two families only: Mincho for display, Instrument Sans for everything else */
+  --font-mono: var(--font-sans);
   --overline: var(--weight-semibold) var(--size-overline)/1 var(--font-sans);
   --transition-color: color var(--duration-fast) var(--ease-standard),
                       background-color var(--duration-fast) var(--ease-standard),

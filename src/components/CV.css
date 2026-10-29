@@ -82,7 +82,8 @@
 }
 
 .cv-item-when {
-  font: var(--weight-regular) var(--size-caption)/1 var(--font-mono);
+  font: var(--weight-regular) var(--size-caption)/1 var(--font-sans);
+  font-variant-numeric: tabular-nums;
   color: var(--sienna-600);
   white-space: nowrap;
 }

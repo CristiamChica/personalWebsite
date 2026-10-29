@@ -58,7 +58,7 @@
 }
 
 .pm-nash-lbl {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 8px;
   font-weight: 600;
   letter-spacing: 0.06em;

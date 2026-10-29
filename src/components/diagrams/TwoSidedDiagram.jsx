@@ -42,11 +42,11 @@ function TwoSidedDiagram({ animate = false }) {
 
       {/* Network effect arc */}
       <path d="M36,40 Q126,2 216,40" stroke="var(--chart-2)" strokeWidth="1.6" strokeDasharray="4 4" markerEnd="url(#tsd-arrow)" />
-      <text x="126" y="14" fill="var(--stone-400)" fontSize="9" fontFamily="'IBM Plex Mono', monospace" textAnchor="middle">network effect</text>
+      <text x="126" y="14" fill="var(--stone-400)" fontSize="9" fontFamily="'Instrument Sans', sans-serif" textAnchor="middle">network effect</text>
 
       {/* Side labels */}
-      <text x="32" y="138" fill="var(--text-muted)" fontSize="9" fontFamily="'IBM Plex Mono', monospace" textAnchor="middle">users</text>
-      <text x="220" y="138" fill="var(--text-muted)" fontSize="9" fontFamily="'IBM Plex Mono', monospace" textAnchor="middle">providers</text>
+      <text x="32" y="138" fill="var(--text-muted)" fontSize="9" fontFamily="'Instrument Sans', sans-serif" textAnchor="middle">users</text>
+      <text x="220" y="138" fill="var(--text-muted)" fontSize="9" fontFamily="'Instrument Sans', sans-serif" textAnchor="middle">providers</text>
     </svg>
   )
 }

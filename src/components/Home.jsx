@@ -136,6 +136,7 @@ function Home() {
         <div className="container">
           <p className="overline sc-eyebrow">Trajectory</p>
           <div className="sc-traj-grid">
+            <span className="sc-traj-end" aria-hidden="true">Earlier</span>
             {trajectory.map(stop => (
               <div key={stop.id} className="sc-traj-stop">
                 <div className={`sc-traj-dot sc-traj-dot--${stop.dotStyle}`} />

@@ -18,24 +18,24 @@ function MembershipDiagram({ animate = false }) {
       <line x1="22" y1="126" x2="246" y2="126" stroke="var(--border-strong)" strokeWidth="1" />
 
       {/* Axis labels */}
-      <text x="14" y="22" fill="var(--text-muted)" fontSize="9" fontFamily="'IBM Plex Mono', monospace">p</text>
-      <text x="234" y="140" fill="var(--stone-400)" fontSize="9" fontFamily="'IBM Plex Mono', monospace">t →</text>
+      <text x="14" y="22" fill="var(--text-muted)" fontSize="9" fontFamily="'Instrument Sans', sans-serif">p</text>
+      <text x="234" y="140" fill="var(--stone-400)" fontSize="9" fontFamily="'Instrument Sans', sans-serif">t →</text>
 
       {/* t₀ / t₁ / T labels */}
-      <text x="22" y="140" textAnchor="middle" fill="var(--text-muted)" fontSize="9" fontFamily="'IBM Plex Mono', monospace">t₀</text>
-      <text x="134" y="140" textAnchor="middle" fill="var(--text-muted)" fontSize="9" fontFamily="'IBM Plex Mono', monospace">t₁</text>
-      <text x="246" y="140" textAnchor="middle" fill="var(--text-muted)" fontSize="9" fontFamily="'IBM Plex Mono', monospace">T</text>
+      <text x="22" y="140" textAnchor="middle" fill="var(--text-muted)" fontSize="9" fontFamily="'Instrument Sans', sans-serif">t₀</text>
+      <text x="134" y="140" textAnchor="middle" fill="var(--text-muted)" fontSize="9" fontFamily="'Instrument Sans', sans-serif">t₁</text>
+      <text x="246" y="140" textAnchor="middle" fill="var(--text-muted)" fontSize="9" fontFamily="'Instrument Sans', sans-serif">T</text>
 
       {/* Renewal dashed vertical */}
       <line x1="134" y1="16" x2="134" y2="126" stroke="var(--border-hairline)" strokeWidth="1" strokeDasharray="4 4" />
-      <text x="138" y="26" fill="var(--text-muted)" fontSize="8" fontFamily="'IBM Plex Mono', monospace">renewal</text>
+      <text x="138" y="26" fill="var(--text-muted)" fontSize="8" fontFamily="'Instrument Sans', sans-serif">renewal</text>
 
       {/* ── Long-term price: flat at y=72 ── */}
       <line x1="22" y1="72" x2="246" y2="72"
         stroke="var(--chart-1)" strokeWidth="2.6" strokeLinecap="round"
         style={longStyle} />
       <text x="26" y="62" fill="var(--chart-1)" fontSize="9"
-        fontFamily="'IBM Plex Mono', monospace" fontWeight="500">long-term</text>
+        fontFamily="'Instrument Sans', sans-serif" fontWeight="500">long-term</text>
 
       {/* ── Short-term: low intro → jump at renewal ── */}
       {/* Period 1: intro price below long-term */}
@@ -57,7 +57,7 @@ function MembershipDiagram({ animate = false }) {
       <circle cx="134" cy="46" r="3.5" fill="var(--chart-2)" />
 
       <text x="26" y="115" fill="var(--stone-400)" fontSize="9"
-        fontFamily="'IBM Plex Mono', monospace" fontWeight="500">short-term</text>
+        fontFamily="'Instrument Sans', sans-serif" fontWeight="500">short-term</text>
     </svg>
   )
 }

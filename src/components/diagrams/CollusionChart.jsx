@@ -16,11 +16,11 @@ function CollusionChart({ animate = false }) {
 
       {/* Collusive reference line */}
       <line x1="22" y1="34" x2="246" y2="34" stroke="var(--artemisia-500)" strokeWidth="1" strokeDasharray="4 5" />
-      <text x="26" y="28" fill="var(--artemisia-700)" fontSize="9" fontFamily="'IBM Plex Mono', monospace" fontWeight="500">collusive</text>
+      <text x="26" y="28" fill="var(--artemisia-700)" fontSize="9" fontFamily="'Instrument Sans', sans-serif" fontWeight="500">collusive</text>
 
       {/* Competitive reference line */}
       <line x1="22" y1="112" x2="246" y2="112" stroke="var(--stone-400)" strokeWidth="1" strokeDasharray="4 5" />
-      <text x="26" y="106" fill="var(--text-muted)" fontSize="9" fontFamily="'IBM Plex Mono', monospace" fontWeight="500">competitive</text>
+      <text x="26" y="106" fill="var(--text-muted)" fontSize="9" fontFamily="'Instrument Sans', sans-serif" fontWeight="500">competitive</text>
 
       {/* Curve A */}
       <path
@@ -41,7 +41,7 @@ function CollusionChart({ animate = false }) {
       />
 
       {/* x-axis caption */}
-      <text x="150" y="146" fill="var(--stone-400)" fontSize="9" fontFamily="'IBM Plex Mono', monospace">episodes →</text>
+      <text x="150" y="146" fill="var(--stone-400)" fontSize="9" fontFamily="'Instrument Sans', sans-serif">episodes →</text>
     </svg>
   )
 }
