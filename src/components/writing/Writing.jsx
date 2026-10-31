@@ -8,7 +8,6 @@ function Writing() {
   return (
     <div className="wr-page container">
       <header className="wr-header">
-        <p className="overline wr-eyebrow">Writing</p>
         <h1 className="wr-title">Notes and analyses</h1>
         <p className="wr-intro">
           Longer pieces on mathematics, machine learning and data. Each analysis links to the data behind it.

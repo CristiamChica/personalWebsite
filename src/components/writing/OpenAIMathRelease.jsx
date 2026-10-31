@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Stat } from '../../agt-design/components/display/Stat.jsx'
 import { Card } from '../../agt-design/components/display/Card.jsx'
-import { Badge } from '../../agt-design/components/display/Badge.jsx'
 import { Tooltip } from '../../agt-design/components/feedback/Tooltip.jsx'
 import EmailLink from '../EmailLink.jsx'
 import LeanByTierChart from '../diagrams/openaiMathAudit/LeanByTierChart.jsx'
@@ -77,6 +75,16 @@ function Term({ children, definition }) {
   )
 }
 
+function Stat({ label, value, note }) {
+  return (
+    <div className="pt-stat">
+      <span className="pt-stat-value">{value}</span>
+      <span className="pt-stat-label">{label}</span>
+      <span className="pt-stat-note">{note}</span>
+    </div>
+  )
+}
+
 function Section({ id, title, children }) {
   return (
     <section id={id} className="pt-section" aria-labelledby={`${id}-h`}>
@@ -90,7 +98,7 @@ function OpenAIMathRelease() {
   return (
     <article className="pt container">
       <header className="pt-header">
-        <p className="overline pt-eyebrow">
+        <p className="pt-crumbline">
           <Link to="/writing" className="pt-crumb">Writing</Link> · {post.topic}
         </p>
         <h1 className="pt-title">{post.title}</h1>
@@ -114,14 +122,14 @@ function OpenAIMathRelease() {
       </Card>
 
       <div className="pt-stats">
-        <Stat label="Result families" value={n(F.families)} caption={`${n(F.manuscripts)} manuscripts`} />
-        <Stat label="Pages" value={n(F.pages)} caption={`${n(F.words)} words`} />
-        <Stat label="Headline in Lean" value={n(F.leanCoversHeadline)} unit={`of ${n(F.families)}`} caption="families" />
-        <Stat label="Expert review, mid case" value={n(F.expertYears)} unit="expert-years" caption={`${n(F.hoursMid)} hours`} />
+        <Stat label="Result families" value={n(F.families)} note={`${n(F.manuscripts)} manuscripts`} />
+        <Stat label="Pages" value={n(F.pages)} note={`${n(F.words)} words`} />
+        <Stat label="Headline result in Lean" value={n(F.leanCoversHeadline)} note={`of ${n(F.families)} families`} />
+        <Stat label="Expert-years of review" value={n(F.expertYears)} note={`mid case, ${n(F.hoursMid)} hours`} />
       </div>
 
       <nav className="pt-toc" aria-label="On this page">
-        <p className="overline">On this page</p>
+        <p className="pt-toc-label">On this page</p>
         <ol>
           {SECTIONS.map(([id, label]) => <li key={id}><a href={`#${id}`}>{label}</a></li>)}
         </ol>
@@ -262,7 +270,11 @@ function OpenAIMathRelease() {
         </p>
         <div className="pt-gaps">
           {SCOPE_GAPS.map(g => (
-            <Card key={g.num} padding={20} eyebrow={`Family ${g.num} · Partial or supporting only`} title={familyTitle(g.num)}>
+            <Card key={g.num} padding={20}>
+              <div className="pt-gap-head">
+                <h4 className="pt-gap-title">{familyTitle(g.num)}</h4>
+                <p className="pt-gap-family">Family {g.num} · partial or supporting result only</p>
+              </div>
               <dl className="pt-gap">
                 <div><dt>Paper claims</dt><dd>{g.claims}</dd></div>
                 <div><dt>Lean checks</dt><dd>{g.checks}</dd></div>
@@ -325,10 +337,10 @@ function OpenAIMathRelease() {
               <span className="pt-hub-body">
                 <span className="pt-hub-title">{h.title}</span>
                 <span className="pt-hub-meta">
-                  Family {h.family} · cited directly by {h.cited_by}
+                  Family {h.family} · cited directly by {h.cited_by} ·{' '}
                   {h.manuscript_lean_backed
-                    ? <Badge tone="positive">Lean-backed</Badge>
-                    : <Badge tone="neutral">No Lean for this manuscript</Badge>}
+                    ? <span className="pt-hub-lean">Lean-backed</span>
+                    : 'no Lean for this manuscript'}
                 </span>
               </span>
             </li>

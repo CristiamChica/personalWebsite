@@ -9,6 +9,11 @@
   /* site-level aliases on top of AGT semantics */
   /* two families only: Mincho for display, Instrument Sans for everything else */
   --font-mono: var(--font-sans);
+  /* long-form scale (/writing): four styles, two weights */
+  --type-title: var(--weight-medium) 44px/1.15 var(--font-display);
+  --type-section: var(--weight-medium) 28px/1.25 var(--font-display);
+  --type-prose: var(--weight-regular) 17px/var(--leading-relaxed) var(--font-sans);
+  --type-small: var(--weight-regular) 14px/1.5 var(--font-sans);
   --overline: var(--weight-semibold) var(--size-overline)/1 var(--font-sans);
   --transition-color: color var(--duration-fast) var(--ease-standard),
                       background-color var(--duration-fast) var(--ease-standard),

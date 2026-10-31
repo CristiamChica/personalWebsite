@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════
    WRITING INDEX — ledger rows, as on Research
+   Type: --type-title, --type-section, --type-prose, --type-small only
 ═══════════════════════════════════════ */
 
 .wr-page {
@@ -10,19 +11,15 @@
   padding: var(--space-11) 0 var(--space-9);
 }
 
-.wr-eyebrow {
-  margin-bottom: var(--space-6);
-}
-
 .wr-title {
-  font: var(--type-display);
+  font: var(--type-title);
   letter-spacing: var(--tracking-tight);
   color: var(--text-primary);
   margin-bottom: var(--space-5);
 }
 
 .wr-intro {
-  font: var(--weight-regular) var(--size-body-l)/var(--leading-relaxed) var(--font-sans);
+  font: var(--type-prose);
   color: var(--text-secondary);
   max-width: 620px;
 }
@@ -54,12 +51,12 @@
 }
 
 .wr-row-meta {
-  font: var(--weight-medium) var(--size-caption)/1.4 var(--font-mono);
+  font: var(--type-small);
   color: var(--text-muted);
 }
 
 .wr-row-title {
-  font: var(--weight-semibold) var(--size-h2)/var(--leading-snug) var(--font-sans);
+  font: var(--type-section);
   color: var(--text-primary);
   transition: color var(--duration-fast) var(--ease-standard);
 }
@@ -72,7 +69,7 @@
 }
 
 .wr-row-desc {
-  font: var(--weight-regular) var(--size-body)/var(--leading-relaxed) var(--font-sans);
+  font: var(--type-prose);
   color: var(--text-secondary);
   max-width: 680px;
 }
@@ -84,5 +81,9 @@
 
   .wr-title {
     font-size: var(--size-display-m);
+  }
+
+  .wr-row-title {
+    font-size: 24px;
   }
 }
